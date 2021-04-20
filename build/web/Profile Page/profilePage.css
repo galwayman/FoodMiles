@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 18-Feb-2021, 10:34:12
+    Author     : coola
+*/
+
+.profile-box{
+    border: 1px solid green;
+    margin-top: 7%;
+    height: 40rem;
+    box-shadow: 5px 3px 13px 6px #888888a8;
+    padding-top: 3rem;
+}
+.profile-box-image{
+    height: 20rem;
+    width: auto;
+    border: 1px solid #2d6d2d;
+    max-width: 100%;
+    margin-top: 10%;
+    margin-bottom: 2rem;
+}
+.profile-box-image-apple{
+        box-shadow: 5px 3px 13px 6px red;
+}
+.profile-box-image-strawberry{
+        box-shadow: 5px 3px 13px 6px pink;
+}
+.profile-box-image-banana{
+        box-shadow: 5px 3px 13px 6px yellow;
+}
+.profile-box-image-grape{
+        box-shadow: 5px 3px 13px 6px purple;
+}
+.profile-box-image-pear{
+        box-shadow: 5px 3px 13px 6px green;
+}

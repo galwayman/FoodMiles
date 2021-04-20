@@ -1,0 +1,53 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 04-Feb-2021, 16:48:58
+    Author     : coola
+*/
+
+a.nostyle:link {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+
+a.nostyle:visited {
+    text-decoration: inherit;
+    color: inherit;
+    cursor: auto;
+}
+.super-market-button{
+    background: white;
+    height: 9rem;
+    font-size: 60px;
+    width: 80%;
+    margin-left: 10%;
+    border: 3px solid #2d6d2d;
+    margin-bottom: 20px;
+    color: #2d6d2d;
+    box-shadow: 5px 7px #0000005e;
+}
+.super-market-button:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    /*background:darkgreen;*/
+}
+.select-store-header{
+   background: #2d6d2d;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+    font-size: 30px;
+    padding-bottom: 10px;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    padding-top: 10px;
+}
+.btn:hover {
+    color: #2d6d2d;
+    box-shadow: 5px 7px #0000005e;
+}

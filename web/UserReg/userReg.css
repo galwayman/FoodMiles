@@ -1,0 +1,62 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 26-Feb-2021, 21:14:42
+    Author     : coola
+*/
+
+.default-header-foodmiles{
+     background: #2d6d2d;
+    color: white;
+   font-size: 25px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+}
+.margin-top{
+    margin-top: 15%;
+}
+
+.reg-body{
+    font-size: 1.5rem;
+}
+
+.box-reg{
+    width: 50%;
+    margin-left: 25%;
+    box-shadow: 5px 3px 13px 6px #888888a8;
+    height: 300px;
+    padding-top: 50px;
+}
+.reg-button{
+    background: #2d6d2d;
+    border: #2d6d2d;
+    color: white;
+    font-weight: 600;
+}
+.pd-10{
+    padding-top: 10px;
+}
+@media (max-width: 400px) {
+    .box-reg {
+    width: 70%;
+    margin-left: 15%;
+    height: 500px;
+    padding-top: 135px;
+    padding-left: 77px;
+}
+}
+@media (min-width: 1080px) {
+    .box-reg {
+    width: 30%;
+    margin-left: 35%;
+}
+}

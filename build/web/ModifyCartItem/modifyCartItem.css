@@ -1,0 +1,77 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 10-Apr-2021, 21:58:34
+    Author     : coola
+*/
+
+.viewFoodImage{
+   text-align: center; 
+    height: auto;
+    width: 50%;
+    margin-left: 25%;
+    border: 3px solid #2d6d2d;
+    background: white;
+    margin-top: 10px;
+}
+.food-pic{
+    height: 30rem;
+    width: 100%;
+}
+.text-info-view-food{
+   font-size: 2rem;
+    color: #2d6d2d;
+    border: 2px solid #2d6d2d;
+    background: white;
+    padding-top: 2rem;
+    margin-left: 5%;
+    margin-top: 20px;
+    padding: 1rem;
+    
+}
+.view-food-header{
+   background: #2d6d2d;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+    font-size: 30px;
+    padding-bottom: 10px;
+    position: sticky;
+    z-index: 100;
+    top: 0;
+    padding-top: 10px;
+}
+.option-view-food{
+    width: 30rem;
+    font-size: 3rem;
+    margin-left: 5%;
+    padding-left: 6%;
+}
+.add-food-item{
+    color: white;
+    background: #2d6d2d;
+    font-size: 3rem;
+    margin-left: 5%;
+    margin-top: 5%;
+    padding: 1rem;
+    width: 10%;
+    text-align: center;
+}
+
+@media (min-width: 769px) {
+    .food-pic{
+    height: 10rem;
+    width: auto;
+}
+.viewFoodImage{
+   width: 20%;
+   margin-left: 40%;
+}
+.option-view-food{
+    
+    font-size: 2rem;
+}
+}

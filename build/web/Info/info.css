@@ -1,0 +1,98 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 15-Mar-2021, 23:02:33
+    Author     : coola
+*/
+
+.info-header {
+    background: #2d6d2d;
+    height: 50px;
+    color: white;
+    font-size: 22px;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: 500;
+    width: 100%;
+    position: fixed;
+}
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 22-Mar-2021, 18:18:47
+    Author     : aisli
+*/
+
+.collapsible {
+    
+  background: #00cc66;
+  color: white;
+  cursor: pointer;
+  padding: 18px;
+  width: 100%;
+  border: 3px solid #2d6d2d;
+  box-shadow: 5px 7px #0000005e;
+  margin-bottom: 10px;
+  text-align: left;
+  outline: none;
+  font-size: 15px;
+  font-style: oblique;
+}
+
+.active, .collapsible:hover {
+  background-color: #00994d;
+}
+
+.content {
+  padding: 0 18px;
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.2s ease-out;
+  background-color: #f1f1f1;
+}
+
+.food-miles-header{
+    background-color: #2d6d2d;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+    font-size: 88px;
+    padding-bottom: 17px;
+    padding-top: 17px;
+}
+
+.custom-footer {
+    height: 10%;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 2vh;
+    color: white;
+    background: #2d6d2d;
+    width: 104%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+
+.clear { 
+    clear: both; 
+    height: 60px; 
+}
+
+.info-button{
+    margin-top: 20px;
+    width: 80%;
+    text-align: center;
+    font-size: 32px;
+    margin-left: 10%;
+    background: #5fbe07;
+}

@@ -1,0 +1,205 @@
+html, body { height: 100%; padding: 0; margin: 0; }
+/*html, body {
+max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}*/
+row{
+    height:100%;
+}
+.default-header-foodmiles{
+    background: #2d6d2d;
+    color: white;
+    font-size: 3rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+}
+
+
+.homescreen-body{
+    max-width: 100%;
+    max-height: 100%;
+    overflow-x: hidden !important;
+    overflow-y: hidden !important;
+}
+#div1 { 
+    width: 50%;
+    height: 45%;
+    float: left;
+    padding-top: 5rem;
+    padding-left: 2vh;
+}
+#div2 { 
+   width: 50%;
+    height: 45%;
+    float: right;
+    padding-top: 5rem;
+    padding-left: 1vh;
+}
+#div3 { 
+    width: 50%;
+    height: 35%;
+    float: left;
+/*    padding-top: 5rem;*/
+    padding-left: 2vh;
+}
+#div4 { 
+    width: 50%;
+    height: 35%;
+    float: right;
+/*    padding-top: 5rem;*/
+    padding-left: 1vh;
+    
+}
+
+
+.default-background{
+    background: #cbfa7059;
+
+}
+.food-miles-header{
+    background: #2d6d2d;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+    font-size: 2rem;
+    padding-bottom: 10px;
+    padding-top: 10px;
+}
+.food-miles-footer{
+    height: 3rem;
+    margin-top: -1%;
+    text-align: center;
+    background: #2d6d2d;
+    color: white;
+    margin-left: -15px;
+    margin-right: -15px;
+}
+
+.button-border{
+    width: 10rem;
+    height: 10rem;
+    border-radius: 87px;
+    box-shadow: 4px 5px #00000045;
+    text-align: center;
+    padding-top: 25px;
+    border: 5px solid #2d6d2d;
+    background: white;
+}
+.button-border:active {
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
+    /*background:darkgreen;*/
+}
+
+.homescreen-dividers{
+    /*padding-top: 5rem;*/
+    /*background: #f8fa70;*/
+    text-align: center;
+    height: 17rem;
+}
+.icon-styles{
+    font-size: 70px;
+    color: #2d6d2d;
+
+}
+
+.bottom-navbar{
+    background: #f8fa70;
+    color: white;
+    font-style: oblique;
+    font-size: 2rem;
+}
+.button-title{
+   color: #2d6d2d;
+   color: #2d6d2d;
+    font-size: 1rem;
+}
+.custom-footer {
+    height: 10%;
+    text-align: center;
+    font-size: 2rem;
+    padding-top: 2vh;
+    color: white;
+    background: #2d6d2d;
+    width: 104%;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    right: 0px;
+    margin-bottom: 0px;
+}
+.icon-button:active {
+    /*box-shadow: 0 5px #666;*/
+    transform: translateY(2px);
+    /*padding-top: 1vh;*/
+    /*background:darkgreen;*/
+}
+.logOutButton{
+   background: #2d6d2d;
+    color: white;
+    width: 5rem;
+    position: absolute;
+    padding-top: 5px;
+    bottom: 0 !important;
+    text-align: center;
+    padding-bottom: 5px;
+    border-radius: 6px;
+    margin-left: 39%;
+    margin-bottom: 7%;
+    
+}
+.logOutButton:active {
+    /*box-shadow: 0 5px #666;*/
+    transform: translateY(2px);
+    /*padding-top: 1vh;*/
+    /*background:darkgreen;*/
+}
+.back-arrow-header{
+    left: 20px;
+    top: 18px;
+    position: fixed;
+}
+.back-arrow-header:active {
+    /*box-shadow: 0 5px #666;*/
+    transform: translateY(2px);
+    /*padding-top: 1vh;*/
+    /*background:darkgreen;*/
+}
+body{
+    overflow: scroll;
+}
+.adminButtons{
+   background: white;
+    border: #2d6d2d 4px solid;
+    color: #2d6d2d;
+}
+.adminButtons:hover{
+    color: #fff;
+    background-color: yellowgreen;
+    border-color: green; /*set the color you want here*/
+}
+.adminButtons:active,.adminButtons:focus{
+  background-color: #2d6d2d!important;
+  color:white;
+}
+
+.divHover:hover {
+    cursor: pointer !important;
+}
+
+@media (min-width: 769px) {
+ .button-border {
+    width: 30rem;
+   
+    margin-left: 14rem;
+    
+ }
+}

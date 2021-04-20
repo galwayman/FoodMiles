@@ -1,0 +1,40 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 23-Feb-2021, 22:21:20
+    Author     : coola
+*/
+
+.shopping-cart-header {
+    background: #2d6d2d;
+    height: 50px;
+    color: white;
+    font-size: 22px;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: 500;
+}
+.cart-button{
+   color: white;
+    background: #2d6d2d;
+    font-size: 20px;
+}
+.empty-cart-text{
+    font-size: 30px;
+    color: green;
+    font-weight: 500;
+    margin-top: 10%;
+}
+.modify-button{
+    background: #2d6d2d;
+    color: white;
+    font-size: 14px;
+}
+.cart-text{
+    border-top: 2px solid #2d6d2d;color: #2d6d2d;
+    font-size: 20px;
+    font-weight: 500;
+}

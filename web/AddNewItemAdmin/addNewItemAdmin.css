@@ -1,0 +1,96 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-Mar-2021, 22:39:03
+    Author     : coola
+*/
+
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 12-Mar-2021, 22:40:43
+    Author     : coola
+*/
+.margin-top{
+    margin-top: 15%;
+}
+.countries-title{
+    background: white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 9px;
+    font-family: cursive;
+    color: #2d6d2d;
+    margin-top: 20px;
+}
+.add-button{
+    background: #2d6d2d;
+    color: white;
+    font-size: 20px;
+}
+.edit-country-header {
+     background: #2d6d2d;
+    color: white;
+    font-size: 3rem;
+        padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+}
+.default-header-foodmiles{
+     background: #2d6d2d;
+    color: white;
+    font-size: 2rem;
+        padding-top: 10px;
+    padding-bottom: 10px;
+    text-align: center;
+    font-weight: 500;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+}
+.add-country{
+    background: #2d6d2d;
+    color: white;
+    margin-left: 23%;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+.display-country-title{
+    margin-top: 20px;
+         color: #2d6d2d;
+         font-weight: 500;
+         font-size: 17px;
+         padding-bottom: 15px;
+}
+.food-item-add{
+    font-size: 3rem;
+    color: #2d6d2d;
+    font-size: 3rem;
+    color: #2d6d2d;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 5%;
+}
+.food-item-add-input{
+    border: 2px solid #2d6d2d;
+    padding-left: 15px;
+}
+.add-country-text{
+    width: 30%;
+}
+
+@media (min-width: 769px) {
+   
+}

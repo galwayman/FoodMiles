@@ -1,0 +1,36 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 05-Feb-2021, 22:52:49
+    Author     : coola
+*/
+
+row{
+    height: 100%;
+}
+.select-food-item-header{
+    background: #2d6d2d;
+    text-align: center;
+    color: white;
+    font-style: oblique;
+    font-size: 30px;
+    padding-bottom: 10px;
+    padding-top: 10px;
+        position: fixed;
+    width: 100%;
+    z-index: 100;
+    top: 0;
+}
+
+.type-text{
+    font-size: 50px;
+    font-weight: 500;
+    color: #2d6d2d;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    
+}

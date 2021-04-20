@@ -1,0 +1,55 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : 08-Mar-2021, 21:12:45
+    Author     : coola
+*/
+
+.countries-title{
+    background: white;
+    font-size: 25px;
+    text-align: center;
+    border-radius: 9px;
+    font-family: cursive;
+    color: #2d6d2d;
+    margin-top: 20px;
+}
+.modify-button{
+    background: #2d6d2d;
+    color: white;
+    font-size: 20px;
+}
+.edit-country-header {
+    background: #2d6d2d;
+    height: 50px;
+    color: white;
+    font-size: 22px;
+    padding-top: 5px;
+    text-align: center;
+    font-weight: 500;
+}
+.add-country{
+    background: #2d6d2d;
+    color: white;
+    margin-left: 23%;
+    margin-top: 16px;
+    margin-bottom: 12px;
+}
+.display-country-title{
+    margin-top: 20px;
+         color: #2d6d2d;
+         font-weight: 500;
+         font-size: 17px;
+         padding-bottom: 15px;
+}
+.info-btn{
+        background: #2d6d2d;
+    border: #2d6d2d;
+    color: white;
+    font-weight: 600;
+    width: 30px;
+    height: 30px;
+}
