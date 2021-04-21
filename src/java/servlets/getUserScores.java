@@ -30,7 +30,9 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import src.User;
+import src.UserScoreTop;
 import src.UserScores;
+import src.UserScoresDAO;
 
 /**
  *
@@ -71,40 +73,39 @@ public class getUserScores extends HttpServlet {
             String username = "mydb5473o";
             String password = "mydb5473o";
 
-            Connection connection = (Connection) DriverManager.getConnection(dbURL, username, password);
-            System.out.println("connection = " + connection.toString());
-            Statement statement = (Statement) connection.createStatement();
-            ResultSet rs = statement.executeQuery("select * from userScores where userIDScore in (select userID from user where userID ="+id+")");
-            System.out.println("rs = " + rs.toString());
-
-            while (rs.next()) {
-
-                int userIDScore = rs.getInt("userIDScore");
-
-                int cartNumber = rs.getInt("cartNumber");
-                int carbonScore = rs.getInt("carbonScore");
-
-                UserScores ud = new UserScores(userIDScore, cartNumber, carbonScore);
-                high.add(carbonScore);
-                uScores.add(ud);
-            }
-            ResultSet rs1 = statement.executeQuery("select * from userScores");
-            System.out.println("rs1 = " + rs.toString());
-
-            while (rs1.next()) {
-
-                int userIDScore = rs1.getInt("userIDScore");
-
-                int cartNumber = rs1.getInt("cartNumber");
-                int carbonScore = rs1.getInt("carbonScore");
-
-                UserScores avg = new UserScores(userIDScore, cartNumber, carbonScore);
+            try (Connection connection = (Connection) DriverManager.getConnection(dbURL, username, password)) {
+                System.out.println("connection = " + connection.toString());
+                Statement statement = (Statement) connection.createStatement();
+                ResultSet rs = statement.executeQuery("select * from userScores where userIDScore in (select userID from user where userID ="+id+")");
+                System.out.println("rs = " + rs.toString());
                 
-
-                averageUserScore.add(avg);
+                while (rs.next()) {
+                    
+                    int userIDScore = rs.getInt("userIDScore");
+                    
+                    int cartNumber = rs.getInt("cartNumber");
+                    int carbonScore = rs.getInt("carbonScore");
+                    
+                    UserScores ud = new UserScores(userIDScore, cartNumber, carbonScore);
+                    high.add(carbonScore);
+                    uScores.add(ud);
+                }
+                ResultSet rs1 = statement.executeQuery("select * from userScores");
+                System.out.println("rs1 = " + rs.toString());
+                
+                while (rs1.next()) {
+                    
+                    int userIDScore = rs1.getInt("userIDScore");
+                    
+                    int cartNumber = rs1.getInt("cartNumber");
+                    int carbonScore = rs1.getInt("carbonScore");
+                    
+                    UserScores avg = new UserScores(userIDScore, cartNumber, carbonScore);
+                    
+                    
+                    averageUserScore.add(avg);
+                }
             }
-
-            connection.close();
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.toString());
         }
@@ -116,11 +117,15 @@ public class getUserScores extends HttpServlet {
         
         double avg = sum/averageUserScore.size();
         
+        UserScoresDAO uDAO = new UserScoresDAO();
+        List<UserScoreTop> scores = uDAO.getBestScores();
+        
         int highScore = Collections.max(high) +1;        
         HttpSession session = request.getSession();
         session.setAttribute("uScores", uScores);
         session.setAttribute("avg", avg);
         session.setAttribute("highScore", highScore);
+        session.setAttribute("scores", scores);
 
         RequestDispatcher dispatcher = request.getRequestDispatcher("UserScores/userScores.jsp");
         dispatcher.forward(request, response);

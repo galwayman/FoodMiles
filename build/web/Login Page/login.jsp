@@ -48,7 +48,7 @@
                            class="form-control input-login" 
                            id="userEmailLogin" 
                            aria-describedby="emailHelp"
-                           value="admin@admin.com" 
+                           value="Jack@Jack.com" 
                            placeholder="Enter email">
                 </div>
                 <div class="form-group">
@@ -67,7 +67,11 @@
                 <input type="submit" class="btn login-submit"></input> 
             </form>
 
-            <div class="register-button" stye="cursor:pointer !important;" onclick="window.location = 'UserReg/userReg.jsp'">Register</div>
+            <div class="register-button" 
+                 stye="cursor:pointer !important;" 
+                 onclick="window.location = 'UserReg/userReg.jsp'">
+                    Register
+            </div>
         </div>
 
     </body>

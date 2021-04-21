@@ -40,7 +40,7 @@
 
             <div class="col-3">
             </div>
-            <div class="col-6">
+            <div class="col-6"style="text-align: center;">
                 <c:if test="${uLog.getProfilePic() == '0'}">
 
                     <img class="profile-box-image profile-box-image-strawberry" alt="Strawberry">
@@ -67,7 +67,7 @@
 
             <div class="col-3">
             </div>
-            <div class="col-6">
+            <div class="col-6"style="text-align: center;">
                 <h1>${uLog.getUserName()}</h1>
             </div>
             <div class="col-3">
@@ -77,7 +77,7 @@
 
             <div class="col-3">
             </div>
-            <div class="col-6">
+            <div class="col-6" style="text-align: center;">
                 <h1>${uLog.getUserEmail()}</h1>
             </div>
             <div class="col-3">
@@ -87,7 +87,7 @@
 
             <div class="col-3">
             </div>
-            <div class="col-5">
+            <div class="col-6"style="text-align: center;">
                 <form method="post" action="../EditUser/editUser.jsp">
                     <input type="hidden" name="userID" value="${uLog.getUserID()}">
                     <input type="hidden" name="userName" value="${uLog.getUserName()}">

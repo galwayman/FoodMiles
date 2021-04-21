@@ -19,8 +19,14 @@
               integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="./homeStyles.css">
+        <link rel="stylesheet" href="./UserScores/userScores.css">
 
-
+        <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
+        <script>
+            function goBack() {
+                window.history.back();
+            }
+        </script>
         <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
         <script type="text/javascript">
             google.charts.load('current', {'packages': ['line']});
@@ -45,12 +51,12 @@
 //                        title: 'Carbon Scores',
                     },
 //                    width: 950,
-                    height: 750,
+                    height: 550,
                     colors: ['#2d6d2d', 'Orange'],
                     vAxis: {
                         viewWindow: {
                             min: 0,
-                            max: ${highScore}+100
+                            max: ${highScore} + 100
                         }
                     },
                     legend: {textStyle: {fontName: 'TimesNewRoman', fontSize: 30, bold: false}},
@@ -82,12 +88,54 @@
             }
         </script>
 
+
     <header class="food-miles-header">
-        User Scores
+
+        <div class="container">
+            <div class="row">
+
+                <div class="col-1" onclick="window.location = './index.jsp'">
+                    <i class="icon-arrow-left"></i>
+                </div>
+                <div class="col-11">
+                    User Scores
+                </div>
+            </div>
     </header>
 </head>
 <body  class="default-background">
 
     <div style="margin-top: 1%;" id="line_top_x"></div>
+
+
+    <div class="scoreboard">
+        <div class="scoreboard-header">
+            Top Foodmilers
+        </div>
+
+        <c:forEach var="s" items="${scores}">
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-3">
+                        ${s.userName} 
+                    </div>
+                    <div class="col-6">
+                        ${s.average}
+                    </div>
+                    <div class="col-3">
+                        <c:if test="${s.position == '1'}">
+                            <i class="fas fa-leaf firstPlace" style="color: gold"></i>
+                        </c:if>
+                        <c:if test="${s.position == '2'}">
+                            <i class="fas fa-leaf secondPlace" style="color: silver"></i>
+                        </c:if>
+                    </div>
+                </div>
+
+            </div>
+        </c:forEach>
+
+    </div>
 </body>
 </html>

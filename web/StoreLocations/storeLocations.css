@@ -21,3 +21,17 @@ body {
   margin: 0;
   padding: 0;
 }
+
+.default-header-foodmiles{
+    background: #2d6d2d;
+    color: white;
+    font-size: 3rem;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    text-align: center;
+    font-weight: 500;
+    position: fixed;
+    z-index: 100;
+    top: 0;
+    width: 100%;
+}

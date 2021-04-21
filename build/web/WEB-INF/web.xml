@@ -124,6 +124,14 @@
         <servlet-name>ModifyCart</servlet-name>
         <servlet-class>servlets.ModifyCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>UpdateFave</servlet-name>
+        <servlet-class>servlets.UpdateFave</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>GetStoreLocations</servlet-name>
+        <servlet-class>servlets.GetStoreLocations</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>getSuperMarkets</servlet-name>
         <url-pattern>/getSuperMarkets</url-pattern>
@@ -242,6 +250,14 @@
     <servlet-mapping>
         <servlet-name>ModifyCart</servlet-name>
         <url-pattern>/ModifyCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>UpdateFave</servlet-name>
+        <url-pattern>/UpdateFave</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>GetStoreLocations</servlet-name>
+        <url-pattern>/GetStoreLocations</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

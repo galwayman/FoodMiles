@@ -8,3 +8,24 @@ and open the template in the editor.
     Author     : coola
 */
 
+.scoreboard{
+    text-align: center;
+    border: 1px solid #2d6d2d;
+    background: white;
+    color: #2d6d2d;
+    width: 50%;
+    margin-left: 25%;
+    margin-top: 20px;
+    font-size: 25px;
+}
+.scoreboard-header{
+    background: #2d6d2d;
+    color: white;
+    font-weight: 500;
+}
+.firstPlace{
+    color:gold;
+}
+.secondPlace{
+    color: greenyellow;
+}
