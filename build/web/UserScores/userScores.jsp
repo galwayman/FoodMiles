@@ -6,8 +6,7 @@
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
-
+<%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
 
 
 <!DOCTYPE html>
@@ -98,13 +97,19 @@
                     <i class="icon-arrow-left"></i>
                 </div>
                 <div class="col-11">
-                    User Scores
+                    User Scores <c:if test="${userScoresDummy == 'Dummy'}"> Dummy Data</c:if>
                 </div>
             </div>
     </header>
 </head>
 <body  class="default-background">
-
+<c:if test="${empty uScores}">
+        <div class="empty-cart-text">
+            Sorry you need to add items to the cart first
+        </div>
+    </c:if>
+<c:if test="${fn:length(uScores) > 0}">
+    
     <div style="margin-top: 1%;" id="line_top_x"></div>
 
 
@@ -137,5 +142,7 @@
         </c:forEach>
 
     </div>
+</c:if>
+    
 </body>
 </html>

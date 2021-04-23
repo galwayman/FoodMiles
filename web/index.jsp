@@ -31,6 +31,7 @@
     <body scroll="no" 
           class="default-background 
                  homescreen-body">
+        
 
                     <div id="div1">
                             <div class="button-border" 

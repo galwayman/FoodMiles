@@ -43,7 +43,7 @@
             <div class="col-6"style="text-align: center;">
                 <c:if test="${uLog.getProfilePic() == '0'}">
 
-                    <img class="profile-box-image profile-box-image-strawberry" alt="Strawberry">
+                    <img class="profile-box-image profile-box-image-strawberry"src="../images/Strawberry.png"  alt="Strawberry">
                 </c:if>
                 <c:if test="${uLog.getProfilePic() == '1'}">
                     <img class="profile-box-image profile-box-image-banana"src="../images/Banana.png" alt="Banana">

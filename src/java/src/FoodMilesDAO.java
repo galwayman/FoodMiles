@@ -151,9 +151,16 @@ public class FoodMilesDAO {
             }
         }
 
-        uniqueID = Collections.max(cID) + 1;
+        if(cID.isEmpty()){
+            uniqueID =1;
+             return uniqueID;
+        }else{
+            uniqueID = Collections.max(cID) + 1;
+             return uniqueID;
+        }
+//        uniqueID = Collections.max(cID) + 1;
 
-        return uniqueID;
+//        return uniqueID;
     }
 
 }

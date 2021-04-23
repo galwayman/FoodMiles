@@ -42,27 +42,37 @@ public class UserRegistration extends HttpServlet {
         String userPasswordReg = request.getParameter("userPasswordReg");
         int premium = 0;
         int admin = 0;
-        int testUserName =0;
-        int testUserEmail =0;
-        int profilePic =0;
-        
+        int testUserName;
+        int testUserEmail;
+        int profilePic = 0;
+
         testUserName = newUser.checkForUserName(userNameReg);
         testUserEmail = newUser.checkForUserEmail(userEmailReg);
+        String uReg = "Fail";
 
         User n = new User(userID, userNameReg, userEmailReg, userPasswordReg, premium, admin, profilePic);
-
+        HttpSession session = request.getSession();
         if (testUserName == 1) {
 
             if (testUserEmail == 1) {
                 newUser.addNew(n);
-                HttpSession session = request.getSession();
+
                 session.setAttribute("uLog", n);
                 response.sendRedirect("index.jsp");
             } else {
-                response.sendRedirect("UserReg/userReg.jsp");
+
+//                request.setAttribute("userRegMessageFailed", uReg);
+//
+//                request.getRequestDispatcher("UserReg/userReg.jsp").forward(request, response);
+                
+            response.sendRedirect("UserReg/userReg.jsp?message=hello");
+
             }
-        }else{
-            response.sendRedirect("UserReg/userReg.jsp");
+        } else {
+//            request.setAttribute("userRegMessageFailed", uReg);
+//            request.getRequestDispatcher("UserReg/userReg.jsp").forward(request, response);
+            
+            response.sendRedirect("UserReg/userReg.jsp?message=hello");
         }
 
     }

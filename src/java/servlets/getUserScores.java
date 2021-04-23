@@ -19,6 +19,7 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Base64;
 import java.util.Collections;
+import static java.util.Collections.list;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -57,11 +58,12 @@ public class getUserScores extends HttpServlet {
             throws ServletException, IOException {
 
         String userID = request.getParameter("userID");
-                User u = (User) request.getSession().getAttribute("uLog");
+        User u = (User) request.getSession().getAttribute("uLog");
         int id = u.getUserID();
         List<UserScores> uScores = new ArrayList<>();
         List<Integer> high = new ArrayList<>();
         List<UserScores> averageUserScore = new ArrayList<>();
+        HttpSession session = request.getSession();
 
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -76,33 +78,42 @@ public class getUserScores extends HttpServlet {
             try (Connection connection = (Connection) DriverManager.getConnection(dbURL, username, password)) {
                 System.out.println("connection = " + connection.toString());
                 Statement statement = (Statement) connection.createStatement();
-                ResultSet rs = statement.executeQuery("select * from userScores where userIDScore in (select userID from user where userID ="+id+")");
+                ResultSet rs = statement.executeQuery("select * from userScores where userIDScore in (select userID from user where userID =" + id + ")");
                 System.out.println("rs = " + rs.toString());
-                
+                if (rs.next() == false) {
+                 
+                    session.setAttribute("userScoresDummy", "Dummy");
+                    UserScores demo = new UserScores(id, 1, 4567);
+                    UserScores demo1 = new UserScores(id, 2, 4444);
+                    UserScores demo2 = new UserScores(id, 3, 5555);
+                    high.add(5555);
+                    Collections.addAll(uScores, demo, demo1, demo2);
+                }
                 while (rs.next()) {
-                    
+
                     int userIDScore = rs.getInt("userIDScore");
-                    
+
                     int cartNumber = rs.getInt("cartNumber");
                     int carbonScore = rs.getInt("carbonScore");
-                    
+
                     UserScores ud = new UserScores(userIDScore, cartNumber, carbonScore);
                     high.add(carbonScore);
                     uScores.add(ud);
                 }
+
+               
                 ResultSet rs1 = statement.executeQuery("select * from userScores");
                 System.out.println("rs1 = " + rs.toString());
-                
+
                 while (rs1.next()) {
-                    
+
                     int userIDScore = rs1.getInt("userIDScore");
-                    
+
                     int cartNumber = rs1.getInt("cartNumber");
                     int carbonScore = rs1.getInt("carbonScore");
-                    
+
                     UserScores avg = new UserScores(userIDScore, cartNumber, carbonScore);
-                    
-                    
+
                     averageUserScore.add(avg);
                 }
             }
@@ -114,14 +125,14 @@ public class getUserScores extends HttpServlet {
         for (int i = 0; i < averageUserScore.size(); i++) {
             sum += averageUserScore.get(i).getCarbonScore();
         }
-        
-        double avg = sum/averageUserScore.size();
-        
+
+        double avg = sum / averageUserScore.size();
+
         UserScoresDAO uDAO = new UserScoresDAO();
         List<UserScoreTop> scores = uDAO.getBestScores();
+
+        int highScore = Collections.max(high) + 1;
         
-        int highScore = Collections.max(high) +1;        
-        HttpSession session = request.getSession();
         session.setAttribute("uScores", uScores);
         session.setAttribute("avg", avg);
         session.setAttribute("highScore", highScore);
