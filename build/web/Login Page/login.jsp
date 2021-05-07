@@ -52,7 +52,7 @@
                 to {bottom: 0; opacity: 0;}
             }
         </style>
-         <script>
+        <script>
 
 
             function myFunction() {
@@ -68,7 +68,7 @@
 
 
         </script>
-        
+
         <title>
             FoodMiles Home Page
         </title>
@@ -126,20 +126,36 @@
                 <input type="submit" class="btn login-submit"></input> 
             </form>
 
-            <div class="register-button" 
-                 stye="cursor:pointer !important;" 
-                 onclick="window.location = 'UserReg/userReg.jsp'">
-                    Register
+            <div class="container">
+                <div class="row">
+
+                    <div class="col-6">
+                        <div class="register-button" 
+                             stye="cursor:pointer !important;" 
+                             onclick="window.location = 'UserReg/userReg.jsp'">
+                            Register
+                        </div>
+                    </div>
+                    <div class="col-6">
+                        <div class="register-button" 
+                             stye="cursor:pointer !important;" 
+                             onclick="window.location = 'ForgotPassword/forgotPassword.jsp'">
+                            Forgot Password
+                        </div>
+                    </div>
+                </div>
             </div>
+
+           
         </div>
         <div id="snackbar">Details Incorrect</div>
     </body>
     <c:if test="${userRegMessageFailed == 'Fail'}">
 
-    <script>
-        myFunction();
-        resetForm();
-    </script>
+        <script>
+            myFunction();
+            resetForm();
+        </script>
 
-</c:if>   
+    </c:if>   
 </html>

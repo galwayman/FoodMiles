@@ -20,6 +20,7 @@ public class User  implements Serializable {
     private int premium;
     private int admin;
     private int profilePic;
+    private String passwordQuestion;
     
     public User(){
         userID = 0;
@@ -29,9 +30,10 @@ public class User  implements Serializable {
         premium = 0;
         admin = 0;
         profilePic =1;
+        passwordQuestion ="";
     }
 
-    public User(int userID, String userName, String userEmail, String userPassword, int premium, int admin, int profilePic) {
+    public User(int userID, String userName, String userEmail, String userPassword, int premium, int admin, int profilePic, String passwordQuestion) {
         this.userID = userID;
         this.userName = userName;
         this.userEmail = userEmail;
@@ -39,7 +41,17 @@ public class User  implements Serializable {
         this.premium = premium;
         this.admin = admin;
         this.profilePic = profilePic;
+        this.passwordQuestion = passwordQuestion;
     }
+
+    public String getPasswordQuestion() {
+        return passwordQuestion;
+    }
+
+    public void setPasswordQuestion(String passwordQuestion) {
+        this.passwordQuestion = passwordQuestion;
+    }
+    
 
     public int getProfilePic() {
         return profilePic;

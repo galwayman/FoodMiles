@@ -32,7 +32,7 @@ public class UserDAO {
         PreparedStatement pstmt = null;
         try {
             con = DriverManager.getConnection(dbURL, username, password);
-            pstmt = con.prepareStatement("INSERT INTO user(userID,userName,userEmail,userPassword,premium,admin,profilePic) VALUES(?,?,?,?,?,?,?)");
+            pstmt = con.prepareStatement("INSERT INTO user(userID,userName,userEmail,userPassword,premium,admin,profilePic) VALUES(?,?,?,?,?,?,?,?)");
             pstmt.setInt(1, u.getUserID());
             pstmt.setString(2, u.getUserName());
             pstmt.setString(3, u.getUserEmail());
@@ -40,6 +40,7 @@ public class UserDAO {
             pstmt.setInt(5, u.getPremium());
             pstmt.setInt(6, u.getAdmin());
             pstmt.setInt(7, u.getProfilePic());
+            pstmt.setString(8, u.getPasswordQuestion());
             pstmt.execute();
         } catch (SQLException ex) {
 
@@ -56,12 +57,12 @@ public class UserDAO {
             }
         }
     }
-    
-    public int createUniqueID(){
-        
+
+    public int createUniqueID() {
+
         int uniqueID = 0;
-       List<Integer> uID = new ArrayList<>();
-        
+        List<Integer> uID = new ArrayList<>();
+
         Connection con = null;
         Statement stmt = null;
         try {
@@ -95,15 +96,14 @@ public class UserDAO {
                 Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-        
-        uniqueID = Collections.max(uID) +1;
-                
+
+        uniqueID = Collections.max(uID) + 1;
+
         return uniqueID;
     }
-    
-    
-    public int checkForUserName(String userName){
-        
+
+    public int checkForUserName(String userName) {
+
         int uniqueUserName = 1;
         String test;
         Connection con = null;
@@ -122,15 +122,14 @@ public class UserDAO {
             if (rs.next()) {
                 test = rs.getString("userName");
                 if (userName.equals(test)) //this part does not happen even if it should
-            {uniqueUserName =0;
-           }
-                else{
-                    uniqueUserName =1;
+                {
+                    uniqueUserName = 0;
+                } else {
+                    uniqueUserName = 1;
                 }
 
-                
             }
-  
+
         } catch (SQLException ex) {
 
         } finally {
@@ -145,13 +144,12 @@ public class UserDAO {
                 Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-       
+
         return uniqueUserName;
     }
-    
-    
-     public int checkForUserEmail(String userEmail){
-        
+
+    public int checkForUserEmail(String userEmail) {
+
         int uniqueUserEmail = 1;
         String test;
         Connection con = null;
@@ -166,20 +164,17 @@ public class UserDAO {
 
             con = DriverManager.getConnection(dbURL, username, password);
             stmt = con.createStatement();
-            ResultSet rs = stmt.executeQuery("SELECT userEmail FROM user where userEmail = '"+userEmail+"'");
+            ResultSet rs = stmt.executeQuery("SELECT userEmail FROM user where userEmail = '" + userEmail + "'");
             if (rs.next()) {
                 test = rs.getString("userEmail");
                 if (userEmail.equals(test)) //this part does not happen even if it should
-            {uniqueUserEmail =0;
-           }
-                else{
-                    uniqueUserEmail =1;
+                {
+                    uniqueUserEmail = 0;
+                } else {
+                    uniqueUserEmail = 1;
                 }
 
-                
             }
-           
-            
 
         } catch (SQLException ex) {
 
@@ -195,11 +190,9 @@ public class UserDAO {
                 Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
             }
         }
-       
+
         return uniqueUserEmail;
     }
-    
-   
 
 //    public void delete(int id) {
 //        Connection con = null;
@@ -251,8 +244,79 @@ public class UserDAO {
             }
         }
     }
+    public void updatePassword(String user, String newPassword) {
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        try {
+
+            con = DriverManager.getConnection(dbURL, username, password);
+            pstmt = con.prepareStatement("UPDATE user SET userPassword=? WHERE userEmail=? ");
+            pstmt.setString(1, newPassword);
+            pstmt.setString(2, user);
+            pstmt.executeUpdate();
+        } catch (SQLException ex) {
+
+        } finally {
+            try {
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+    }
 
     public User getUser(String userEmail, String userPassword) {
+        User u = null;
+        Connection con = null;
+        Statement stmt = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+
+            con = DriverManager.getConnection(dbURL, username, password);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT * FROM user where userEmail = '" + userEmail + "' and userPassword = '"+userPassword+"'");
+            while (rs.next()) {
+
+                int userID = rs.getInt("userID");
+                String userName = rs.getString("userName");
+                String uEmail = rs.getString("userEmail");
+                String uPassword = rs.getString("userPassword");
+                int uPrem = rs.getInt("premium");
+                int uAdmin = rs.getInt("admin");
+                int uPic = rs.getInt("profilePic");
+                String uQuestion = rs.getString("passwordQuestion");
+
+                u = new User(userID, userName, uEmail, uPassword, uPrem, uAdmin, uPic, uQuestion);
+
+            }
+
+        } catch (SQLException ex) {
+
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+        return u;
+    }
+    public User getUserPassReset(String userEmail) {
         User u = null;
         Connection con = null;
         Statement stmt = null;
@@ -276,8 +340,9 @@ public class UserDAO {
                 int uPrem = rs.getInt("premium");
                 int uAdmin = rs.getInt("admin");
                 int uPic = rs.getInt("profilePic");
+                String uQuestion = rs.getString("passwordQuestion");
 
-                u = new User(userID, userName, uEmail, uPassword, uPrem, uAdmin, uPic);
+                u = new User(userID, userName, uEmail, uPassword, uPrem, uAdmin, uPic, uQuestion);
 
             }
 
@@ -316,8 +381,9 @@ public class UserDAO {
                 int uPrem = rs.getInt("premium");
                 int uAdmin = rs.getInt("admin");
                 int uPic = rs.getInt("profilePic");
+                String uQuestion = rs.getString("passwordQuestion");
 
-                User u = new User(userID, userName, userEmail, userPassword, uPrem, uAdmin,uPic);
+                User u = new User(userID, userName, userEmail, userPassword, uPrem, uAdmin, uPic, uQuestion);
                 users.add(u);
             }
         } catch (SQLException ex) {

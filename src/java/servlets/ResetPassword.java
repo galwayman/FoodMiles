@@ -11,15 +11,13 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import src.User;
 import src.UserDAO;
 
 /**
  *
  * @author coola
  */
-public class UserRegistration extends HttpServlet {
+public class ResetPassword extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,50 +30,14 @@ public class UserRegistration extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-        UserDAO newUser = new UserDAO();
-
-        int userID = newUser.createUniqueID();
-        String userNameReg = request.getParameter("userNameReg");
-        String userEmailReg = request.getParameter("userEmailReg");
-        String userPasswordReg = request.getParameter("userPasswordReg");
-        String passwordQuestion = request.getParameter("passwordQuestion");
-        int premium = 0;
-        int admin = 0;
-        int testUserName;
-        int testUserEmail;
-        int profilePic = 0;
-
-        testUserName = newUser.checkForUserName(userNameReg);
-        testUserEmail = newUser.checkForUserEmail(userEmailReg);
-        String uReg = "Fail";
-
-        User n = new User(userID, userNameReg, userEmailReg, userPasswordReg, premium, admin, profilePic,passwordQuestion);
-        HttpSession session = request.getSession();
-        if (testUserName == 1) {
-
-            if (testUserEmail == 1) {
-                newUser.addNew(n);
-
-                session.setAttribute("uLog", n);
-                response.sendRedirect("index.jsp");
-            } else {
-
-//                request.setAttribute("userRegMessageFailed", uReg);
-//
-//                request.getRequestDispatcher("UserReg/userReg.jsp").forward(request, response);
-                
-            response.sendRedirect("UserReg/userReg.jsp?message=hello");
-
-            }
-        } else {
-//            request.setAttribute("userRegMessageFailed", uReg);
-//            request.getRequestDispatcher("UserReg/userReg.jsp").forward(request, response);
-            
-            response.sendRedirect("UserReg/userReg.jsp?message=hello");
-        }
-
+       
+        String userEmail =(String)request.getSession().getAttribute("uepr");
+        String newPassword = request.getParameter("newPasswordReset");
+        
+        UserDAO uD = new UserDAO();
+        uD.updatePassword(userEmail, newPassword);
+        
+        response.sendRedirect("index.jsp");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

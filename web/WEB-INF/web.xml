@@ -132,6 +132,14 @@
         <servlet-name>GetStoreLocations</servlet-name>
         <servlet-class>servlets.GetStoreLocations</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ForgotPassword</servlet-name>
+        <servlet-class>servlets.ForgotPassword</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ResetPassword</servlet-name>
+        <servlet-class>servlets.ResetPassword</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>getSuperMarkets</servlet-name>
         <url-pattern>/getSuperMarkets</url-pattern>
@@ -258,6 +266,14 @@
     <servlet-mapping>
         <servlet-name>GetStoreLocations</servlet-name>
         <url-pattern>/GetStoreLocations</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ForgotPassword</servlet-name>
+        <url-pattern>/ForgotPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ResetPassword</servlet-name>
+        <url-pattern>/ResetPassword</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

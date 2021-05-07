@@ -47,7 +47,7 @@
                 var v_icon=''
                 map = new google.maps.Map(document.getElementById("map"), {
                     center: myLatLng,
-                    zoom: 15
+                    zoom: 13
                 });
 //                new google.maps.Marker({
 //                    position: myLatLng,

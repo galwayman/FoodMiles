@@ -130,8 +130,20 @@ public class getUserScores extends HttpServlet {
 
         UserScoresDAO uDAO = new UserScoresDAO();
         List<UserScoreTop> scores = uDAO.getBestScores();
+        
+        if (uScores.size() < 2) {
+                 
+                    session.setAttribute("userScoresDummy", "Dummy2");
+                    UserScores demo = new UserScores(id, 1, 4567);
+                    UserScores demo1 = new UserScores(id, 2, 4444);
+                    UserScores demo2 = new UserScores(id, 3, 5555);
+                    high.add(5555);
+                    Collections.addAll(uScores, demo, demo1, demo2);
+      }
 
         int highScore = Collections.max(high) + 1;
+        
+        
         
         session.setAttribute("uScores", uScores);
         session.setAttribute("avg", avg);

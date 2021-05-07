@@ -19,7 +19,7 @@ import src.UserDAO;
  *
  * @author coola
  */
-public class UserRegistration extends HttpServlet {
+public class ForgotPassword extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -32,50 +32,24 @@ public class UserRegistration extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-
-        UserDAO newUser = new UserDAO();
-
-        int userID = newUser.createUniqueID();
-        String userNameReg = request.getParameter("userNameReg");
-        String userEmailReg = request.getParameter("userEmailReg");
-        String userPasswordReg = request.getParameter("userPasswordReg");
-        String passwordQuestion = request.getParameter("passwordQuestion");
-        int premium = 0;
-        int admin = 0;
-        int testUserName;
-        int testUserEmail;
-        int profilePic = 0;
-
-        testUserName = newUser.checkForUserName(userNameReg);
-        testUserEmail = newUser.checkForUserEmail(userEmailReg);
-        String uReg = "Fail";
-
-        User n = new User(userID, userNameReg, userEmailReg, userPasswordReg, premium, admin, profilePic,passwordQuestion);
-        HttpSession session = request.getSession();
-        if (testUserName == 1) {
-
-            if (testUserEmail == 1) {
-                newUser.addNew(n);
-
-                session.setAttribute("uLog", n);
-                response.sendRedirect("index.jsp");
-            } else {
-
-//                request.setAttribute("userRegMessageFailed", uReg);
-//
-//                request.getRequestDispatcher("UserReg/userReg.jsp").forward(request, response);
-                
-            response.sendRedirect("UserReg/userReg.jsp?message=hello");
-
-            }
-        } else {
-//            request.setAttribute("userRegMessageFailed", uReg);
-//            request.getRequestDispatcher("UserReg/userReg.jsp").forward(request, response);
-            
-            response.sendRedirect("UserReg/userReg.jsp?message=hello");
-        }
-
+      
+       String uepr = request.getParameter("userEmailPassReset");
+       String uppr = request.getParameter("userPetPassReset");
+        UserDAO uD = new UserDAO();
+       User u = uD.getUserPassReset(uepr);
+       HttpSession session = request.getSession();
+       
+       if(uppr.equals(u.getPasswordQuestion())){
+           session.setAttribute("uepr", uepr);
+           response.sendRedirect("ResetPassword/resetPassword.jsp");
+       }
+       else{
+           response.sendRedirect("ForgotPassword/forgotPassword.jsp");
+       }
+        
+        
+        
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

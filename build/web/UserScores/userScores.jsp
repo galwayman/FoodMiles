@@ -97,7 +97,9 @@
                     <i class="icon-arrow-left"></i>
                 </div>
                 <div class="col-11">
-                    User Scores <c:if test="${userScoresDummy == 'Dummy'}"> Dummy Data</c:if>
+                    User Scores 
+                    <c:if test="${userScoresDummy == 'Dummy'}"> Dummy Data</c:if>
+                    <c:if test="${userScoresDummy == 'Dummy2'}"> Dummy Data <span style="font-size: 16px;">2 Carts needed</span></c:if>
                 </div>
             </div>
     </header>

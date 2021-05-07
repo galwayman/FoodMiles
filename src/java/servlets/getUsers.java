@@ -74,9 +74,10 @@ public class getUsers extends HttpServlet {
                 int uPrem = rs.getInt("premium");
                 int uAdmin = rs.getInt("admin");
                 int uPic = rs.getInt("profilePic");
+                String uQuestion = rs.getString("passwordQuestion");
                 
 
-                User u = new User(userID, userName, userEmail,uPassword,uPrem,uAdmin,uPic);
+                User u = new User(userID, userName, userEmail,uPassword,uPrem,uAdmin,uPic,uQuestion);
                 users.add(u);
             }
             connection.close();

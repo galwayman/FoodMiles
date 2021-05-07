@@ -1,8 +1,9 @@
 <%-- 
-    Document   : userReg
-    Created on : 26-Feb-2021, 21:14:33
+    Document   : resetPassword
+    Created on : 07-May-2021, 22:09:03
     Author     : coola
 --%>
+
 
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
@@ -77,7 +78,8 @@
 
         <link rel="stylesheet" href="./homeStyles.css">
         <link rel="stylesheet" href="userReg.css">
-        <link rel="stylesheet" href="./UserReg/userReg.css">
+        <link rel="stylesheet" href="forgotPassword.css">
+        <link rel="stylesheet" href="../ForgotPassword/forgotPassword.css">
         <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
 
         <script>
@@ -97,10 +99,9 @@
             <div class="row">
 
                 <div class="col-1" onclick="goBack()">
-                    <i class="icon-arrow-left"></i>
                 </div>
                 <div class="col-11">
-                    User Registration
+                    Reset Password
                 </div>
             </div>
         </div>
@@ -112,64 +113,37 @@
     </div>
 
     <div class="margin-top box-reg">
-        <form  id="form1" name="form" action="../UserRegistration" method="post">
+        <form  id="formpassreset" name="form" action="../ResetPassword" method="post">
 
 
 
             <div class="container">
-                <div class="row">
+                
 
-                    <div class="col-5">
-                        <label style="color:#2d6d2d">Name</label>
-                    </div>
-                    <div class="col-6">
-                        <input type="text" style="border: 1px solid grey;padding-left: 10px;max-width: 100%;" name="userNameReg" id="userName" value="ori"/>
-                    </div>
-                </div>
-
+                
                 <div class="row pd-10">
 
                     <div class="col-5">
-                        <label style="color:#2d6d2d">Email</label>
+                        <label style="color:#2d6d2d">New Password</label>
                     </div>
                     <div class="col-6">
-                        <input type="text"style="border: 1px solid grey;padding-left: 10px;max-width: 100%;" name="userEmailReg" id="userEmailReg" value="ori@ori.com"/>
+                        <input type="text"
+                               style="border: 1px solid grey;padding-left: 10px;max-width: 100%;" 
+                               name="newPasswordReset" 
+                               id="newPasswordReset" 
+                               value="dog"/>
                     </div>
                 </div>
 
-                <div class="row pd-10">
-
-                    <div class="col-5">
-                        <label style="color:#2d6d2d">Password</label>                </div>
-                    <div class="col-6">
-                        <input type="text"style="border: 1px solid grey;padding-left: 10px;max-width: 100%;" name="userPasswordReg" id="userPasswordReg" value="password" />
-                    </div>
-                </div>
-                <div class="row pd-10">
-
-                    <div class="col-5">
-                        <label style="color:#2d6d2d">First Pets Name</label>                </div>
-                    <div class="col-6">
-                        <input type="text" style="border: 1px solid grey;padding-left: 10px;max-width: 100%;"name="passwordQuestion" id="passwordQuestion" value="Fred" />
-                    </div>
-                </div>
-
-                <div class="row pd-10">
-
-                    <div class="col-5">
-                        <button class="btn reg-button" type="submit" >Register</button>          
-                    </div>
-                    <div class="col-3">
-                    </div>
-                    <div class="col-4">
-                    </div>
-                </div>
             </div>
-
+            <div class="div-align">
+                 <input type="submit" class="btn reset-submit"></input> 
+            </div>
+           
 
         </form>
     </div>
-    <div id="snackbar">User Email or Username already exists</div>
+    <div id="snackbar">Email doesnt exist</div>
     <c:if test="${param.message == 'hello'}">
 
         <script>

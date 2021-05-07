@@ -119,39 +119,47 @@
             <div class="container">
                 <div class="row">
 
-                    <div class="col-4">
+                    <div class="col-5">
                         <label style="color:#2d6d2d">Name</label>
                     </div>
-                    <div class="col-7">
-                        <input type="text" style="border: 1px solid grey;padding-left: 10px" name="userNameReg" id="userName" value="ori"/>
+                    <div class="col-6">
+                        <input type="text" style="border: 1px solid grey;padding-left: 10px;max-width: 100%;" name="userNameReg" id="userName" value="ori"/>
                     </div>
                 </div>
 
                 <div class="row pd-10">
 
-                    <div class="col-4">
+                    <div class="col-5">
                         <label style="color:#2d6d2d">Email</label>
                     </div>
-                    <div class="col-7">
-                        <input type="text" style="border: 1px solid grey;padding-left: 10px" name="userEmailReg" id="userEmailReg" value="ori@ori.com"/>
+                    <div class="col-6">
+                        <input type="text"style="border: 1px solid grey;padding-left: 10px;max-width: 100%;" name="userEmailReg" id="userEmailReg" value="ori@ori.com"/>
                     </div>
                 </div>
 
                 <div class="row pd-10">
 
-                    <div class="col-4">
+                    <div class="col-5">
                         <label style="color:#2d6d2d">Password</label>                </div>
-                    <div class="col-7">
-                        <input type="text" style="border: 1px solid grey;padding-left: 10px" name="userPasswordReg" id="userPasswordReg" value="password" />
+                    <div class="col-6">
+                        <input type="text"style="border: 1px solid grey;padding-left: 10px;max-width: 100%;" name="userPasswordReg" id="userPasswordReg" value="password" />
+                    </div>
+                </div>
+                <div class="row pd-10">
+
+                    <div class="col-5">
+                        <label style="color:#2d6d2d">First Pets Name</label>                </div>
+                    <div class="col-6">
+                        <input type="text" style="border: 1px solid grey;padding-left: 10px;max-width: 100%;"name="passwordQuestion" id="passwordQuestion" value="Fred" />
                     </div>
                 </div>
 
                 <div class="row pd-10">
 
-                    <div class="col-4">
+                    <div class="col-5">
                         <button class="btn reg-button" type="submit" >Register</button>          
                     </div>
-                    <div class="col-4">
+                    <div class="col-3">
                     </div>
                     <div class="col-4">
                     </div>
