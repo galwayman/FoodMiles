@@ -25,8 +25,8 @@
             }
         </script>
     <header class="default-header-foodmiles" style=" font-size: 25px;
-    padding-top: 10px;
-    padding-bottom: 10px;">
+            padding-top: 10px;
+            padding-bottom: 10px;">
 
         <div class="container">
             <div class="row">
@@ -41,8 +41,8 @@
         </div>
     </header>
 
-    </head>
-        
+</head>
+
 <body>
 
 
@@ -58,35 +58,35 @@
                 Food Name
             </div>
             <div class="col-3">
-               Picture
+                Picture
             </div>
 
         </div>
 
     </div>
 
-<c:forEach var="f" items="${foodItemsAdmin}">
-    <div class="container">
-        <div class="row" style="border-top: 1px solid #2d6d2d; padding-bottom: 10px; padding-top: 11px;">
-            <div class="col-3" style="padding-top:2rem">
-                ${f.getFoodItemID()}
-            </div>
-            <div class="col-6" style="padding-top:2rem">
-                ${f.getFoodName()}
-            </div>
-            <div class="col-3">
-                <img src="data:image/jpg;base64,${f.getFoodItemPic()}" style="max-width: 5rem;
-                    padding-top: 3px;    max-height: 15rem;"/>
+    <c:forEach var="f" items="${foodItemsAdmin}">
+        <div class="container">
+            <div class="row" style="border-top: 1px solid #2d6d2d; padding-bottom: 10px; padding-top: 11px;">
+                <div class="col-3" style="padding-top:2rem">
+                    ${f.getFoodItemID()}
+                </div>
+                <div class="col-6" style="padding-top:2rem">
+                    ${f.getFoodName()}
+                </div>
+                <div class="col-3">
+                    <img src="data:image/jpg;base64,${f.getFoodItemPic()}" style="max-width: 5rem;
+                         padding-top: 3px;    max-height: 15rem;"/>
+                </div>
             </div>
         </div>
-    </div>
-</c:forEach> 
+    </c:forEach> 
 
-<button type="button" 
-        class="btn add-country" 
-        onclick="window.location = './AddNewItemAdmin/addNewItemAdmin.jsp'">
-    Add New Item
-</button>
+    <button type="button" 
+            class="btn add-country" 
+            onclick="window.location = './AddNewItemAdmin/addNewItemAdmin.jsp'">
+        Add New Item
+    </button>
 
 
 </body>
