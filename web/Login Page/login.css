@@ -95,7 +95,7 @@ and open the template in the editor.
 
 @media (max-width: 300px) {
     body {
-        background-image: url('../images/fruit.jpg');
+        background-image: url('../images/alt-login-small.png');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
@@ -107,7 +107,7 @@ and open the template in the editor.
 @media (min-width: 301px) and (max-width: 600px) {
     body {
         /*background-color: blue;*/
-        background-image: url('../images/fruit.jpg');
+        background-image: url('../images/alt-login-small.png');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
@@ -117,7 +117,7 @@ and open the template in the editor.
 }
 @media (min-width: 601px) and (max-width: 768px) {
     body {
-        background-image: url('../images/fruit-large.jpg');
+        background-image: url('../images/alt-login.png');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;
@@ -130,7 +130,7 @@ and open the template in the editor.
 }
 @media (min-width: 769px) {
     body {
-        background-image: url('../images/fruit-large.jpg');
+        background-image: url('../images/alt-login.png');
         background-repeat: no-repeat;
         background-attachment: fixed;
         background-size: 100% 100%;

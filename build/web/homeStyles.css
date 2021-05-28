@@ -196,10 +196,10 @@ body{
 }
 
 @media (min-width: 769px) {
- .button-border {
+/* .button-border {
     width: 30rem;
    
     margin-left: 14rem;
     
- }
+ }*/
 }

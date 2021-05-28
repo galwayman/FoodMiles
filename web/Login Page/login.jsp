@@ -88,8 +88,10 @@
 
         <div class="login-white-box">
 
-            <h1 class="title-login gradient-text">
-                FOODMILES
+            <h1 style="margin-bottom:40px;"class="title-login gradient-text">
+                <img style="width:65%;" src="images/logo.jpg" alt="logo">
+
+                <!--FOODMILES-->
             </h1>
             <form 
                 id="form" 
