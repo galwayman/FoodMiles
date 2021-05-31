@@ -97,13 +97,21 @@
                 </div>
                 <div class="col icon-button" 
                      style="cursor: pointer;font-size: 36px;
+<<<<<<< HEAD
+    padding-top: 13px;" 
+=======
                      padding-top: 13px;" 
+>>>>>>> 2da45e9fe8ebbd812a56a9a0e29cd98a185f8ea6
                      onclick="window.location = 'Profile Page/profilePage.jsp'">
                     <i class="fas fa-user"></i>
                 </div>
                 <div class="col icon-button" 
                      style="cursor: pointer;font-size: 36px;
+<<<<<<< HEAD
+    padding-top: 13px;" 
+=======
                      padding-top: 13px;" 
+>>>>>>> 2da45e9fe8ebbd812a56a9a0e29cd98a185f8ea6
                      onclick="location.href = 'https://www.instagram.com/foodmilesapp/'" 
                      href="https://www.instagram.com/foodmilesapp/">
                     <i class="icon-instagram" 
@@ -112,7 +120,11 @@
                 </div>
                 <div class="col icon-button" 
                      style="cursor: pointer;font-size: 36px;
+<<<<<<< HEAD
+    padding-top: 13px;" 
+=======
                      padding-top: 13px;" 
+>>>>>>> 2da45e9fe8ebbd812a56a9a0e29cd98a185f8ea6
                      onclick="window.location = 'getFaveItems'">
                     <i class="fas fa-heart"></i>
 
@@ -120,7 +132,11 @@
                 </div>
                 <div class="col icon-button" 
                      style="cursor: pointer;font-size: 36px;
+<<<<<<< HEAD
+    padding-top: 13px;" 
+=======
                      padding-top: 13px;" 
+>>>>>>> 2da45e9fe8ebbd812a56a9a0e29cd98a185f8ea6
                      onclick="window.location = 'getUserScores'">
                     <i class="icon-cloud"></i>
                 </div>
@@ -167,6 +183,25 @@
             </div>
             <div class="col"class="buttons-large">
                 <div class="button-border" 
+<<<<<<< HEAD
+             style="cursor: pointer;"
+             onclick="window.location = 'Info/info.jsp'">
+            <div class="icon-styles" style="font-size: 100px;">
+                <i class="icon-info"></i>
+            </div>
+            <div class="button-title divHover" style="font-size: 1.3rem;">
+                Info
+            </div>
+        </div>
+            </div>
+            <div class="col"class="buttons-large">
+                <div class="button-border" 
+                     style="cursor: pointer;" 
+                     onclick="window.location = 'getShoppingCart'">
+                    <div class="icon-styles divHover"style="font-size: 100px;">
+                        <i class="icon-shopping-cart"></i> 
+                    </div>
+=======
                      style="cursor: pointer;"
                      onclick="window.location = 'Info/info.jsp'">
                     <div class="icon-styles" style="font-size: 100px;">
@@ -184,6 +219,7 @@
                     <div class="icon-styles divHover"style="font-size: 100px;">
                         <i class="icon-shopping-cart"></i> 
                     </div>
+>>>>>>> 2da45e9fe8ebbd812a56a9a0e29cd98a185f8ea6
                     <div class="button-title divHover"style="font-size: 1.3rem;">
                         Shopping Cart
                     </div>
