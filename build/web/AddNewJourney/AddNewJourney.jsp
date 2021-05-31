@@ -134,7 +134,9 @@
                         <c:if test="${j.transportUsed == '3'}">
                             <i class="fas fa-truck-moving"></i>
                         </c:if>
-
+                        <c:if test="${j.transportUsed == '4'}">
+                            <i class="fas fa-subway"></i>
+                        </c:if>
                         <input type="checkbox" name="addJourney" class="case" value="${j.legID}"></input>
 
                     </div>

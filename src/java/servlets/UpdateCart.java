@@ -57,7 +57,7 @@ public class UpdateCart extends HttpServlet {
         CartDAO cA = new CartDAO();
 
 //        int jID = 9999;
-        c.setFoodCarbon((int) cA.foodCarbon(fID, jID));
+        c.setFoodCarbon((double) cA.foodCarbon(fID, jID));
 
         cA.checkItem(id, fID);
 
@@ -66,7 +66,7 @@ public class UpdateCart extends HttpServlet {
         if (direction.equalsIgnoreCase("shoppingCart")) {
             response.sendRedirect("getShoppingCart");
         } else if (direction.equalsIgnoreCase("home")) {
-            response.sendRedirect("index.jsp");
+            response.sendRedirect("index.jsp?message=Success");
         }
 
     }

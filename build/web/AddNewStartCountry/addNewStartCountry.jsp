@@ -24,7 +24,7 @@
                 <i class="icon-arrow-left"></i>
             </div>
             <div class="col-11">
-                Add New Start Country
+                Add New Country
             </div>
           
 
@@ -34,20 +34,20 @@
     </header>
 </head>
 <body>
-    <form class="margin-top" method="post"  enctype="multipart/form-data"  action="../AddNewStartCountry">
+    <form class="margin-top div-float" method="post"  enctype="multipart/form-data"  action="../AddNewStartCountry">
         <div id="mystyle" class="myform">
             <label class="add-country-text">
-                <span class="small">Country Name</span>
+                <span class="small">Name</span>
             </label>
-            <input type="text" name="startCountryName" id="startCountryName" /> 
+            <input type="text" style="width: 50%;" name="startCountryName" id="startCountryName" /> 
             <div class="food-item-add"> 
                     <label class="add-country-text" for="startCountryImageAdmin">
                         <span>Image</span>
                     </label>
-                    <input type="file"   id="startCountryImageAdmin" name="startCountryImageAdmin">
+                    <input type="file" style="width: 50%;"  id="startCountryImageAdmin" name="startCountryImageAdmin">
                 </div>
             
-            <button type="submit" class="btn add-country-btn">Add New Start Country</button>
+            <button type="submit" class="btn add-country-btn">Add New Country</button>
             <div class="spacer"></div>
         </div>
     </form>  

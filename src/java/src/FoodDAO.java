@@ -100,8 +100,60 @@ public class FoodDAO {
 
         return faveItems;
     }
-    
-    
+     //Add item to favourites - aisli
+    public void addItemToFavourites(int uID, int fID) {
+
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        try {
+            con = DriverManager.getConnection(dbURL, username, password);
+           //sql not working
+            pstmt = con.prepareStatement("INSERT INTO faveItems(userIDFaveItems, foodItemIDFaveItems) VALUES(?,?)");
+            pstmt.setInt(1, uID);
+            pstmt.setInt(2, fID);
+            pstmt.execute();
+        } catch (SQLException ex) {
+
+        } finally {
+            try {
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(FoodDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
+      public void deleteItemFromFavourites(int uID, int fID) {
+
+        Connection con = null;
+        PreparedStatement pstmt = null;
+        try {
+            con = DriverManager.getConnection(dbURL, username, password);
+            pstmt = con.prepareStatement("DELETE FROM faveItems WHERE userIDFaveItems = ? AND foodItemIDFaveItems = ?");
+            pstmt.setInt(1, uID);
+            pstmt.setInt(2, fID);
+            pstmt.execute();
+        } catch (SQLException ex) {
+
+        } finally {
+            try {
+                if (pstmt != null) {
+                    pstmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(FoodDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+    }
     
      public FoodItem getSCItem(String id) {
 

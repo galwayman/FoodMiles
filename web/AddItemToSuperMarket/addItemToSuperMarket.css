@@ -70,12 +70,24 @@ and open the template in the editor.
     font-size: 2rem;
     margin-left: 25%;
 }
+.float-div{
+    box-shadow: 5px 3px 13px 6px #888888a8;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 10rem;
+}
 
-@media (min-width: 769px) {
+@media only screen and (min-width: 769px) {
     
     .edit-country-header {
    
     font-size: 2rem;
     
+}
+.float-div{
+    box-shadow: 5px 3px 13px 6px #888888a8;
+    width: 60%;
+    margin-left: 20%;
+    margin-top: 10rem;
 }
 }

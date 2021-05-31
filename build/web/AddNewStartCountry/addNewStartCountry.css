@@ -32,3 +32,21 @@ and open the template in the editor.
     margin-left: 23%;
     margin-top: 13px;
 }
+ .div-float{
+         box-shadow: 5px 3px 13px 6px #888888a8;
+    border: solid 1px green;
+    width: 80%;
+    margin-left: 10%;
+    height: 18rem;
+    padding-left: 20px;
+    padding-top: 15%;
+    }
+@media only screen and (min-width: 769px) {
+    .div-float{
+        width: 30%;
+        padding-top: 1%;
+        margin-left: 35%;
+        margin-top: 10%;
+    }
+   
+}

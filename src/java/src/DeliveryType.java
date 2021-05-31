@@ -13,7 +13,7 @@ public class DeliveryType {
     
     private int deliveryID;
     private String deliveryName;
-    private int carbon;
+    private double carbon;
     
     public DeliveryType(){
         deliveryID = 0;
@@ -45,11 +45,11 @@ public class DeliveryType {
         this.deliveryName = deliveryName;
     }
 
-    public int getCarbon() {
+    public double getCarbon() {
         return carbon;
     }
 
-    public void setCarbon(int carbon) {
+    public void setCarbon(double carbon) {
         this.carbon = carbon;
     }
     

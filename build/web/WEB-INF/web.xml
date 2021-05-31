@@ -41,10 +41,6 @@
         <servlet-class>servlets.AddNewStartCountry</servlet-class>
     </servlet>
     <servlet>
-        <servlet-name>AddNewEndCountry</servlet-name>
-        <servlet-class>servlets.AddNewEndCountry</servlet-class>
-    </servlet>
-    <servlet>
         <servlet-name>getShoppingCart</servlet-name>
         <servlet-class>servlets.getShoppingCart</servlet-class>
     </servlet>
@@ -140,6 +136,18 @@
         <servlet-name>ResetPassword</servlet-name>
         <servlet-class>servlets.ResetPassword</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>DeleteFave</servlet-name>
+        <servlet-class>servlets.DeleteFave</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>AddNewStoreLocationAdmin</servlet-name>
+        <servlet-class>servlets.AddNewStoreLocationAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>DeleteFromCart</servlet-name>
+        <servlet-class>servlets.DeleteFromCart</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>getSuperMarkets</servlet-name>
         <url-pattern>/getSuperMarkets</url-pattern>
@@ -186,10 +194,6 @@
     <servlet-mapping>
         <servlet-name>AddNewStartCountry</servlet-name>
         <url-pattern>/AddNewStartCountry</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>AddNewEndCountry</servlet-name>
-        <url-pattern>/AddNewEndCountry</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>getShoppingCart</servlet-name>
@@ -274,6 +278,18 @@
     <servlet-mapping>
         <servlet-name>ResetPassword</servlet-name>
         <url-pattern>/ResetPassword</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteFave</servlet-name>
+        <url-pattern>/DeleteFave</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddNewStoreLocationAdmin</servlet-name>
+        <url-pattern>/AddNewStoreLocationAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DeleteFromCart</servlet-name>
+        <url-pattern>/DeleteFromCart</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

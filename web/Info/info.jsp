@@ -8,6 +8,9 @@
 <!DOCTYPE html>
 <html>
     <head>
+         <title>
+            FoodMiles Information
+        </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet"
               href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -17,18 +20,14 @@
         <link rel="stylesheet" href="./homeStyles.css">
         <link rel="stylesheet" href="info.css">
         <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
-        <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
+       
     <header class="info-header">
 
         <div class="container">
             <div class="row">
 
-                <div class="col-1" onclick="goBack()">
-                    <i class="icon-arrow-left"></i>
+                <div class="col-1">
+                    <i class="icon-arrow-left" onclick="window.location = '../index.jsp'"> </i>
                 </div>
                 <div class="col-11">
                     Info

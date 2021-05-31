@@ -51,7 +51,7 @@ public class getShoppingCart extends HttpServlet {
         DisplayCart dc = null;
         Connection con = null;
         Statement stmt = null;
-        int totalScore = 0;
+        double totalScore = 0;
 
         User u = (User) request.getSession().getAttribute("uLog");
         int id = u.getUserID();
@@ -73,7 +73,7 @@ public class getShoppingCart extends HttpServlet {
                 int foodQTY = rs.getInt("foodQTY");
                 String foodName = rs.getString("foodName");
                 
-                int foodCarbon = rs.getInt("foodCarbon");
+                double foodCarbon = rs.getDouble("foodCarbon");
                 int foodItemID = rs.getInt("foodItemID");
 
                 totalScore += foodCarbon * foodQTY;

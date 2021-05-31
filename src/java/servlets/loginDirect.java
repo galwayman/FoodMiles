@@ -53,24 +53,43 @@ public class loginDirect extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
 
-
         String uE = request.getParameter("userEmailLogin");
         String uP = request.getParameter("userPasswordLogin");
-        
+
         UserDAO us = new UserDAO();
+
+        User uLog = us.getUser(uE, uP);
+        int admin1 = uLog.getAdmin();
+        int testEmail = us.checkForUserEmail(uE);
         
-       User uLog = us.getUser(uE, uP);
-       
-       HttpSession session = request.getSession();
-        session.setAttribute("uLog", uLog);
-       
-       int admin1 = uLog.getAdmin();
-       
-        if (admin1 == 0) {
-            response.sendRedirect("index.jsp");
-        } else if (admin1 == 1) {
-            response.sendRedirect("adminHomePage.jsp");
-        } 
+
+        if (testEmail == 0) {
+int testPass = us.checkPassword(uP,uE);
+            if (testPass == 0) {
+                HttpSession session = request.getSession();
+                session.setAttribute("uLog", uLog);
+
+                if (admin1 == 0) {
+                    response.sendRedirect("index.jsp");
+                } else if (admin1 == 1) {
+                    response.sendRedirect("adminHomePage.jsp");
+                }
+            } else if (testPass == 1) {
+                response.sendRedirect("Login Page/login.jsp");
+            }
+
+        } else if (testEmail == 1) {
+            response.sendRedirect("Login Page/login.jsp");
+        }
+
+//        HttpSession session = request.getSession();
+//        session.setAttribute("uLog", uLog);
+//
+//        if (admin1 == 0) {
+//            response.sendRedirect("index.jsp");
+//        } else if (admin1 == 1) {
+//            response.sendRedirect("adminHomePage.jsp");
+//        }
 
     }
 

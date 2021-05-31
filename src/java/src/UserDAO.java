@@ -121,7 +121,7 @@ public class UserDAO {
             ResultSet rs = stmt.executeQuery("SELECT userName FROM user where userName = '" + userName + "'");
             if (rs.next()) {
                 test = rs.getString("userName");
-                if (userName.equals(test)) //this part does not happen even if it should
+                if (userName.equals(test)) 
                 {
                     uniqueUserName = 0;
                 } else {
@@ -147,6 +147,7 @@ public class UserDAO {
 
         return uniqueUserName;
     }
+    
 
     public int checkForUserEmail(String userEmail) {
 
@@ -167,7 +168,7 @@ public class UserDAO {
             ResultSet rs = stmt.executeQuery("SELECT userEmail FROM user where userEmail = '" + userEmail + "'");
             if (rs.next()) {
                 test = rs.getString("userEmail");
-                if (userEmail.equals(test)) //this part does not happen even if it should
+                if (userEmail.equals(test))
                 {
                     uniqueUserEmail = 0;
                 } else {
@@ -192,6 +193,52 @@ public class UserDAO {
         }
 
         return uniqueUserEmail;
+    }
+    
+    public int checkPassword(String userPassword, String userEmail) {
+
+        int correct = 1;
+        String test;
+        Connection con = null;
+        Statement stmt = null;
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+
+            con = DriverManager.getConnection(dbURL, username, password);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("SELECT userPassword FROM user where userEmail = '" + userEmail + "'");
+            if (rs.next()) {
+                test = rs.getString("userPassword");
+                if (userPassword.equals(test)) 
+                {
+                    correct = 0;
+                } else {
+                    correct = 1;
+                }
+
+            }
+
+        } catch (SQLException ex) {
+
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(UserDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
+
+        return correct;
     }
 
 //    public void delete(int id) {

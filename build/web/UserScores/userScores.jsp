@@ -100,51 +100,51 @@
                     User Scores 
                     <c:if test="${userScoresDummy == 'Dummy'}"> Dummy Data</c:if>
                     <c:if test="${userScoresDummy == 'Dummy2'}"> Dummy Data <span style="font-size: 16px;">2 Carts needed</span></c:if>
+                    </div>
                 </div>
-            </div>
-    </header>
-</head>
-<body  class="default-background">
-<c:if test="${empty uScores}">
+        </header>
+    </head>
+    <body  class="default-background">
+    <c:if test="${empty uScores}">
         <div class="empty-cart-text">
             Sorry you need to add items to the cart first
         </div>
     </c:if>
-<c:if test="${fn:length(uScores) > 0}">
-    
-    <div style="margin-top: 1%;" id="line_top_x"></div>
+    <c:if test="${fn:length(uScores) > 0}">
+
+        <div style="margin-top: 1%;" id="line_top_x"></div>
 
 
-    <div class="scoreboard">
-        <div class="scoreboard-header">
-            Top Foodmilers
-        </div>
-
-        <c:forEach var="s" items="${scores}">
-
-            <div class="container">
-                <div class="row">
-                    <div class="col-3">
-                        ${s.userName} 
-                    </div>
-                    <div class="col-6">
-                        ${s.average}
-                    </div>
-                    <div class="col-3">
-                        <c:if test="${s.position == '1'}">
-                            <i class="fas fa-leaf firstPlace" style="color: gold"></i>
-                        </c:if>
-                        <c:if test="${s.position == '2'}">
-                            <i class="fas fa-leaf secondPlace" style="color: silver"></i>
-                        </c:if>
-                    </div>
-                </div>
-
+        <div class="scoreboard">
+            <div class="scoreboard-header">
+                Top Foodmilers
             </div>
-        </c:forEach>
 
-    </div>
-</c:if>
-    
+            <c:forEach var="s" items="${scores}">
+
+                <div class="container">
+                    <div class="row">
+                        <div class="col-3">
+                            ${s.userName} 
+                        </div>
+                        <div class="col-6">
+                            ${s.average}
+                        </div>
+                        <div class="col-3">
+                            <c:if test="${s.position == '1'}">
+                                <i class="fas fa-leaf firstPlace" style="color: gold"></i>
+                            </c:if>
+                            <c:if test="${s.position == '2'}">
+                                <i class="fas fa-leaf secondPlace" style="color: silver"></i>
+                            </c:if>
+                        </div>
+                    </div>
+
+                </div>
+            </c:forEach>
+
+        </div>
+    </c:if>
+
 </body>
 </html>

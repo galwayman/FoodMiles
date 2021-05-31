@@ -36,7 +36,7 @@ public class CalculateFoodMiles extends HttpServlet {
         User u = (User) request.getSession().getAttribute("uLog");
         int id = u.getUserID();
         int newCart;
-        int carbonScore = Integer.parseInt(request.getParameter("cScore"));
+        double carbonScore = Double.parseDouble(request.getParameter("cScore"));
         FoodMilesDAO fm = new FoodMilesDAO();
         newCart = fm.createUniqueID(id);
 

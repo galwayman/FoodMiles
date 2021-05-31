@@ -18,6 +18,7 @@
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="./homeStyles.css">
         <link rel="stylesheet" href="./AddItemToSuperMarket/addItemToSuperMarket.css">
+        <link rel="stylesheet" href="addItemToSuperMarket.css">
         <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
         <script>
             function goBack() {
@@ -43,7 +44,7 @@
 <body>
 
 
-    <form action="AddFoodToSuperMarket" method="post">
+    <form action="AddFoodToSuperMarket" class="float-div" method="post">
         <div class="form-group">
             <label class="food-item-add" for="sel1">Select Supermarket</label>
             <select class="form-control selFI" name="selectSuperMarketForFood" id="selectSuperMarketForFood">

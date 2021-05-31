@@ -13,9 +13,7 @@ public class Country {
     
     String startCountryID;
     String startCountryName;
-    String startCountryFlag;
-//    Binary startCountryFlag;
-    
+    String startCountryFlag;    
     public Country(){
         startCountryID = "";
         startCountryName = "";

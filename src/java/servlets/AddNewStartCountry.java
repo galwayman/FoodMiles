@@ -39,14 +39,18 @@ public class AddNewStartCountry extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        
-        String scID = request.getParameter("startCountryName")+"Start";
+
+        String scID = request.getParameter("startCountryName") + "Start";
         String scN = request.getParameter("startCountryName");
-        
-        InputStream inputStream = null;	// input stream of the upload file 
+        String ecID = request.getParameter("startCountryName") + "End";
+        String ecN = request.getParameter("startCountryName");
+
+        InputStream inputStream = null;
+        InputStream inputStreamEnd = null;	// input stream of the upload file 
 
         // obtains the upload file part in this multipart request 
         Part filePart = request.getPart("startCountryImageAdmin");
+        Part filePart1 = request.getPart("startCountryImageAdmin");
         if (filePart != null) {
             // prints out some information for debugging 
             System.out.println(filePart.getName());
@@ -56,14 +60,20 @@ public class AddNewStartCountry extends HttpServlet {
             // obtains input stream of the upload file 
             inputStream = filePart.getInputStream();
         }
-        
-        
-             
+        if (filePart1 != null) {
+            // prints out some information for debugging 
+            System.out.println(filePart1.getName());
+            System.out.println(filePart1.getSize());
+            System.out.println(filePart1.getContentType());
+
+            // obtains input stream of the upload file 
+            inputStreamEnd = filePart1.getInputStream();
+        }
+
         CountryDAO cA = new CountryDAO();
-        cA.addNewStartCountry(scID,scN,inputStream);
-        
-        
-        
+        cA.addNewStartCountry(scID, scN, inputStream);
+        cA.addNewEndCountry(ecID, ecN, inputStreamEnd);
+
         response.sendRedirect("getCountries");
     }
 

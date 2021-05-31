@@ -8,14 +8,18 @@ package servlets;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import src.FoodItemFave;
+import src.FoodDAO;
 
 /**
  *
- * @author coola
+ * @author aisli
  */
+@WebServlet(name = "UpdateFave", urlPatterns = {"/UpdateFave"})
 public class UpdateFave extends HttpServlet {
 
     /**
@@ -31,16 +35,23 @@ public class UpdateFave extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet UpdateFave</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet UpdateFave at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            response.setContentType("text/html;charset=UTF-8");
+        FoodItemFave fI = new FoodItemFave();
+        fI.setUserIDFaveItems(Integer.parseInt(request.getParameter("addFaveUserID")));
+        fI.setFoodIDFaveItems(Integer.parseInt(request.getParameter("addFaveFoodItemID")));
+        
+        int uID = Integer.parseInt(request.getParameter("addFaveUserID"));
+        int fID =Integer.parseInt(request.getParameter("addFaveFoodItemID"));
+        
+        
+        
+        FoodDAO faveItem = new FoodDAO();
+        
+                
+        faveItem.addItemToFavourites(uID,fID);
+        
+
+        response.sendRedirect("index.jsp?message=Success");
         }
     }
 

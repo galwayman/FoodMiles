@@ -84,7 +84,7 @@
                 <br>
             </div>
 
-            <label for="dt" class="food-item-add">Distance Traveled</label>
+            <label for="dt" class="food-item-add">Distance Traveled KM</label>
             <input type="text" class="form-control selectjl" name="dt" id="dt" value="504">
 
             <button type="submit" class="btn add-button">Add</button>           

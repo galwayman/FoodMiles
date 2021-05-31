@@ -11,6 +11,65 @@
 
 <html>
     <head>
+         <style>
+            #snackbar {
+                visibility: hidden;
+                min-width: 250px;
+                margin-left: -125px;
+                background-color:  #00ccff;
+                color: white;
+                text-align: center;
+                border-radius: 2px;
+                padding: 16px;
+                position: fixed;
+                z-index: 1;
+                left: 50%;
+                bottom: 30px;
+                font-size: 17px;
+            }
+
+            #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            @-webkit-keyframes fadein {
+                from {bottom: 0; opacity: 0;} 
+                to {bottom: 30px; opacity: 1;}
+            }
+
+            @keyframes fadein {
+                from {bottom: 0; opacity: 0;}
+                to {bottom: 30px; opacity: 1;}
+            }
+
+            @-webkit-keyframes fadeout {
+                from {bottom: 30px; opacity: 1;} 
+                to {bottom: 0; opacity: 0;}
+            }
+
+            @keyframes fadeout {
+                from {bottom: 30px; opacity: 1;}
+                to {bottom: 0; opacity: 0;}
+            }
+        </style>
+        <script>
+
+
+            function myFunction() {
+
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function () {
+                    x.className = x.className.replace("show", "");
+                }, 3000);
+
+
+            }
+
+
+        </script>
         <title>
             FoodMiles Home Page
         </title>
@@ -97,7 +156,7 @@
             <div class="col"class="buttons-large">
                 <div class="button-border" 
                      style="cursor: pointer;" 
-                     onclick="window.location = 'StoreLocations/storeLocations.jsp'">
+                     onclick="window.location = 'GetStoreLocations'">
                     <div class="icon-styles"style="font-size: 100px;">
                         <i class="icon-map-marker"></i> 
                     </div>
@@ -216,6 +275,13 @@
             <i class="icon-cloud"></i>
         </div>
     </div>
-
 </body>
+<div id="snackbar">Successfully Added</div>
+    <c:if test="${param.message == 'Success'}">
+        <script>
+            myFunction();
+        </script>
+        <c:remove var="message" scope="session" />
+    </c:if>    
+
 </html>

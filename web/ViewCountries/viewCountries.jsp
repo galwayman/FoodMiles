@@ -40,6 +40,19 @@
     </header>
 </head>
 <body>
+    <div style="text-align: right;
+         padding-right: 2%;
+         margin-top: 10%;
+         position: fixed;
+         z-index: 100;
+         width: 100%;">
+        <button type="button" 
+                class="btn add-country" 
+                onclick="window.location = '../AddNewStartCountry/addNewStartCountry.jsp'">
+            Add New
+        </button>  
+    </div>
+
     <h1 class="countries-title" style="margin-top: 60px">Start Countries</h1>
 
     <div class="container display-country-title">
@@ -52,7 +65,7 @@
                 Country Name
             </div>
 
-           
+
 
 
         </div>
@@ -68,21 +81,17 @@
                 <div class="col-4">
                     ${c.startCountryName}
                 </div>
-                 <div class="col-4" style="max-height: 8rem">
-                <img src="data:image/jpg;base64,${c.startCountryFlag}" style="max-width: 100px;
-    height: 50px;
-    width: 74px;
- padding-top: 3px;    max-height: 15rem;"/>
-            </div>
+                <div class="col-4" style="max-height: 8rem">
+                    <img src="data:image/jpg;base64,${c.startCountryFlag}" style="max-width: 100px;
+                         height: 50px;
+                         width: 74px;
+                         padding-top: 3px;    max-height: 15rem;"/>
+                </div>
             </div>
         </div>
     </c:forEach> 
 
-    <button type="button" 
-            class="btn add-country" 
-            onclick="window.location = '../AddNewStartCountry/addNewStartCountry.jsp'">
-        Add New Start Country
-    </button>
+
 
     <h1 class="countries-title">End Countries</h1>
     <div class="container display-country-title">
@@ -95,7 +104,7 @@
                 Country Name
             </div>
 
-           
+
 
         </div>
 
@@ -111,21 +120,19 @@
                     ${c.endCountryName}
                 </div>
 
-                 <div class="col-4" style="max-height: 8rem">
-                <img src="data:image/jpg;base64,${c.endCountryFlag}" style="max-width: 100px;
-    height: 50px; padding-top: 3px;  
-    width: 74px;
-  max-height: 15rem;"/>
-            </div>
+                <div class="col-4" style="max-height: 8rem">
+                    <img src="data:image/jpg;base64,${c.endCountryFlag}" style="max-width: 100px;
+                         height: 50px; padding-top: 3px;  
+                         width: 74px;
+                         max-height: 15rem;"/>
+                </div>
 
             </div>
 
         </div>
     </c:forEach> 
 
-    <button type="button" class="btn add-country" onclick="window.location = '../AddNewEndCountry/addNewEndCountry.jsp'">
-        Add New End Country
-    </button>
+
 
 
 </body>

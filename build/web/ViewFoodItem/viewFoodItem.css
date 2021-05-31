@@ -7,25 +7,34 @@ and open the template in the editor.
     Created on : 07-Feb-2021, 23:48:56
     Author     : coola
 */
-
+.display-div{
+       background: white;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 25%;
+    border-radius: 11px;
+    padding-top: 10px;
+    box-shadow: 5px 3px 13px 6px #888888a8;
+    padding-bottom: 10px;
+}
 .viewFoodImage{
    text-align: center; 
     height: auto;
-    width: 50%;
-    margin-left: 25%;
+   width: 60%;
+    margin-left: 20%;
     border: 3px solid #2d6d2d;
     background: white;
     margin-top: 10px;
 }
 .food-pic{
-    height: 30rem;
+/*    height: 30rem;*/
     width: 100%;
 }
 .text-info-view-food{
    font-size: 2rem;
-    color: #2d6d2d;
+    color: white;
     border: 2px solid #2d6d2d;
-    background: white;
+    background: #2d6d2d;
     padding-top: 2rem;
     margin-left: 5%;
     margin-top: 20px;
@@ -62,17 +71,37 @@ and open the template in the editor.
     margin-top: 25px;
 }
 
-@media (min-width: 769px) {
+@media (min-width: 900px) {
     .food-pic{
-    height: 10rem;
-    width: auto;
+    /*height: 10rem;*/
+    /*width: auto;*/
 }
 .viewFoodImage{
-   width: 20%;
-   margin-left: 40%;
+   width: 50%;
+   margin-left: 25%;
 }
 .option-view-food{
     
     font-size: 2rem;
+}
+    .display-div{
+        background: white;
+        width: 30%;
+        margin-left: 35%;
+        margin-top:5%;
+        border-radius: 11px;
+        padding-top: 10px;
+    }
+}
+@media (max-width: 777px) {
+    .display-div{
+       background: white;
+    width: 80%;
+    margin-left: 10%;
+    margin-top: 5%;
+    border-radius: 11px;
+    padding-top: 10px;
+    box-shadow: 5px 3px 13px 6px #888888a8;
+    padding-bottom: 10px;
 }
 }

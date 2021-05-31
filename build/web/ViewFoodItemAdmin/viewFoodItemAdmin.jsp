@@ -45,6 +45,18 @@
 
 <body>
 
+        <div style="text-align: right;
+         padding-right: 2%;
+         margin-top: 10%;
+         position: fixed;
+         z-index: 100;
+         width: 100%;">
+         <button type="button" 
+            class="btn add-country" 
+            onclick="window.location = './AddNewItemAdmin/addNewItemAdmin.jsp'">
+        Add New Item
+    </button>
+    </div>
 
     <h1 class="countries-title"></h1>
 
@@ -82,11 +94,7 @@
         </div>
     </c:forEach> 
 
-    <button type="button" 
-            class="btn add-country" 
-            onclick="window.location = './AddNewItemAdmin/addNewItemAdmin.jsp'">
-        Add New Item
-    </button>
+  
 
 
 </body>

@@ -6,27 +6,22 @@
 package servlets;
 
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.PrintWriter;
-import java.util.List;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.MultipartConfig;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import javax.servlet.http.Part;
-import src.Country;
-import src.CountryDAO;
-import src.EndCountry;
+import src.FoodDAO;
+import src.FoodItemFave;
+import src.User;
 
 /**
  *
- * @author coola
+ * @author aisli
  */
-
-@MultipartConfig
-public class AddNewEndCountry extends HttpServlet {
+@WebServlet(name = "DeleteFave", urlPatterns = {"/DeleteFave"})
+public class DeleteFave extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -40,33 +35,22 @@ public class AddNewEndCountry extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-       
+        
+        FoodItemFave fI = new FoodItemFave();
+        fI.setUserIDFaveItems(Integer.parseInt(request.getParameter("delFaveUserID")));
+        fI.setFoodIDFaveItems(Integer.parseInt(request.getParameter("delFaveFoodItemID")));
+        
+        int uID = Integer.parseInt(request.getParameter("delFaveUserID"));
+        int fID =Integer.parseInt(request.getParameter("delFaveFoodItemID"));
         
         
-        String ecID = request.getParameter("endCountryName")+"End";
-        String ecN = request.getParameter("endCountryName");
         
-        InputStream inputStream = null;	// input stream of the upload file 
-
-        // obtains the upload file part in this multipart request 
-        Part filePart = request.getPart("endCountryImageAdmin");
-        if (filePart != null) {
-            // prints out some information for debugging 
-            System.out.println(filePart.getName());
-            System.out.println(filePart.getSize());
-            System.out.println(filePart.getContentType());
-
-            // obtains input stream of the upload file 
-            inputStream = filePart.getInputStream();
-        }
+        FoodDAO del = new FoodDAO();
         
         
-             
-        CountryDAO cA = new CountryDAO();
-        cA.addNewEndCountry(ecID,ecN,inputStream);
-        
-        
-        response.sendRedirect("getCountries");
+        del.deleteItemFromFavourites(uID,fID);
+         
+        response.sendRedirect("getFaveItems");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

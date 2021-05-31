@@ -43,7 +43,7 @@ public class CartDAO {
             pstmt.setInt(1, c.getUserCartID());
             pstmt.setInt(2, c.getFoodItemID());
             pstmt.setInt(3, c.getFoodQTY());
-            pstmt.setInt(4, c.getFoodCarbon());
+            pstmt.setDouble(4, c.getFoodCarbon());
             pstmt.execute();
         } catch (SQLException ex) {
 
@@ -111,7 +111,7 @@ public class CartDAO {
             while (rs.next()) {
 
                 int dt = rs.getInt("travelLegs.distanceTravelled");
-                int dty = rs.getInt("deliveryType.carbon");
+                double dty = rs.getDouble("deliveryType.carbon");
                 double wt = rs.getDouble("foodItem.foodWeight");
                 double calc = dt * dty * wt;
                 allCarbon.add(calc);
@@ -137,6 +137,30 @@ public class CartDAO {
         }
 
         return carbon;
+    }
+    
+        public void deleteItem(int foodItemID, int userCartID) {
+        Connection con = null;
+        Statement stmt = null;
+        try {
+
+            con = DriverManager.getConnection(dbURL, username, password);
+            stmt = (Statement) con.createStatement();
+            stmt.execute("DELETE FROM cart WHERE foodItemID='" +foodItemID+"' and '"+ userCartID+"'");
+        } catch (SQLException ex) {
+
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+                Logger.getLogger(CartDAO.class.getName()).log(Level.SEVERE, null, ex);
+            }
+        }
     }
 
 }

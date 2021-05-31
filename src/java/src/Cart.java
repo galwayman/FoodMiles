@@ -14,7 +14,7 @@ public class Cart {
     int userCartID;
     int foodItemID;
     int foodQTY;
-    int foodCarbon;
+    double foodCarbon;
     
     public Cart(){
         userCartID =0;
@@ -24,18 +24,18 @@ public class Cart {
         foodItemID =0;
     }
 
-    public Cart(int userCartID,  int foodQTY,int foodCarbon,int foodItemID) {
+    public Cart(int userCartID,  int foodQTY,double foodCarbon,int foodItemID) {
         this.userCartID = userCartID;
         this.foodItemID = foodItemID;
         this.foodQTY = foodQTY;
         this.foodCarbon=foodCarbon;
     }
 
-    public int getFoodCarbon() {
+    public double getFoodCarbon() {
         return foodCarbon;
     }
 
-    public void setFoodCarbon(int foodCarbon) {
+    public void setFoodCarbon(double foodCarbon) {
         this.foodCarbon = foodCarbon;
     }
 

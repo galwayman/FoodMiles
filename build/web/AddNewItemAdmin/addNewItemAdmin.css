@@ -18,7 +18,7 @@ and open the template in the editor.
     Author     : coola
 */
 .margin-top{
-    margin-top: 15%;
+    margin-top: 7rem;
 }
 .countries-title{
     background: white;
@@ -33,11 +33,12 @@ and open the template in the editor.
     background: #2d6d2d;
     color: white;
     font-size: 20px;
+    margin-left: 10%;
 }
 .edit-country-header {
      background: #2d6d2d;
     color: white;
-    font-size: 3rem;
+    font-size: 30px;
         padding-top: 20px;
     padding-bottom: 20px;
     text-align: center;
@@ -75,22 +76,44 @@ and open the template in the editor.
          padding-bottom: 15px;
 }
 .food-item-add{
-    font-size: 3rem;
+    font-size: 30px;
     color: #2d6d2d;
-    font-size: 3rem;
     color: #2d6d2d;
     padding-top: 10px;
     padding-bottom: 10px;
     padding-left: 5%;
 }
-.food-item-add-input{
+
+.food-item-add-input {
     border: 2px solid #2d6d2d;
+    width: 90%;
     padding-left: 15px;
 }
-.add-country-text{
+.form-style {
+    border: 1px #2d6d2d solid;
+    width: 90%;
+    margin-left: 6%;
+    box-shadow: 5px 3px 13px 6px #888888a8;
+    padding-top: 20px;
+    height: 74rem;
+}
+
+@media only screen and (min-width: 769px) {
+    .form-style{
+        width: 50%;
+        margin-left: 25%; 
+        padding-left: 95px;
+        height: 44rem;
+    }
+    .add-country-text {
     width: 30%;
 }
 
-@media (min-width: 769px) {
-   
+.add-food-text{
+    width: 40%;
+}
+    .food-item-add-input {
+    width: 50%;
+}
+    
 }

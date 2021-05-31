@@ -56,7 +56,7 @@ public class FoodMilesDAO {
         return fMiles;
     }
 
-    public void addFoodMiles(int uID, int cN, int cS) {
+    public void addFoodMiles(int uID, int cN, double cS) {
 
         Connection con = null;
         PreparedStatement pstmt = null;
@@ -65,7 +65,7 @@ public class FoodMilesDAO {
             pstmt = con.prepareStatement("INSERT INTO userScores(userIDScore,cartNumber,carbonScore) VALUES(?,?,?)");
             pstmt.setInt(1, uID);
             pstmt.setInt(2, cN);
-            pstmt.setInt(3, cS);
+            pstmt.setDouble(3, cS);
             pstmt.execute();
         } catch (SQLException ex) {
 

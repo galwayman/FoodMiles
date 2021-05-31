@@ -10,6 +10,8 @@ Author     : coola
 <!DOCTYPE html>
 <html>
     <head>
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet"
               href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -18,6 +20,7 @@ Author     : coola
         <link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.css" rel="stylesheet">
         <link rel="stylesheet" href="./homeStyles.css">
         <link rel="stylesheet" href="./AddNewItemAdmin/addNewItemAdmin.css">
+        <link rel="stylesheet" href="addNewItemAdmin.css">
         <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
         <script>
             function goBack() {
@@ -44,54 +47,54 @@ Author     : coola
 
     <body>
 
-        <form class="margin-top" method="post"  enctype="multipart/form-data" action="../AddNewFoodItemAdmin">
+        <form class="margin-top form-style" method="post"  enctype="multipart/form-data" action="../AddNewFoodItemAdmin">
             <div id="mystyle" class="myform">
 
 
 
                 <div class="food-item-add">
-                    <label class="add-country-text" for="foodNameAdmin">
+                    <label class="add-food-text" for="foodNameAdmin">
                         <span>Item Name</span>
                     </label>
                     <input type="text" class="food-item-add-input" name="foodNameAdmin" id="foodNameAdmin" value="Orange"/>
                 </div>
 
                 <div class="food-item-add">
-                    <label class="add-country-text" for="organicAdmin">
+                    <label class="add-food-text" for="organicAdmin">
                         <span>Organic</span>
                     </label>
                     <input type="text" class="food-item-add-input"  name="organicAdmin" id="organicAdmin" value="1"/>
                 </div>
 
                 <div class="food-item-add">
-                    <label class="add-country-text" for="irishSourcedAdmin">
+                    <label class="add-food-text" for="irishSourcedAdmin">
                         <span>Irish Sourced</span>
                     </label>
                     <input type="text"  class="food-item-add-input"  name="irishSourcedAdmin" value="1" id="irishSourcedAdmin" />
                 </div>
 
                 <div class="food-item-add">
-                    <label class="add-country-text" for="foodClassAdmin">
+                    <label class="add-food-text" for="foodClassAdmin">
                         <span>Item Class</span>
                     </label>
                     <input type="text" class="food-item-add-input"  name="foodClassAdmin" value="Fruit" id="foodClassAdmin" />
                 </div>
 
                 <div class="food-item-add">
-                    <label class="add-country-text" for="foodTypeAdmin">
+                    <label class="add-food-text" for="foodTypeAdmin">
                         <span>Item Type</span>
                     </label>
                     <input type="text" class="food-item-add-input"  name="foodTypeAdmin" value="Orange"id="foodTypeAdmin" />
                 </div>
                 <div class="food-item-add">
-                    <label class="add-country-text" for="foodWeightAdmin">
+                    <label class="add-food-text" for="foodWeightAdmin">
                         <span>Item Weight</span>
                     </label>
                     <input type="text" class="food-item-add-input"  name="foodWeightAdmin" value="0.235"id="foodWeightAdmin" />
                 </div>
 
                 <div class="food-item-add"> 
-                    <label class="add-country-text" for="foodImageAdmin">
+                    <label class="add-food-text" for="foodImageAdmin">
                         <span>Image</span>
                     </label>
                     <input type="file" style="width: 68%;" id="foodImageAdmin" name="foodImageAdmin">

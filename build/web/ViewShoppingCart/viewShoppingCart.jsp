@@ -5,11 +5,16 @@
 --%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn" %>
+<%@ taglib prefix = "fmt" uri = "http://java.sun.com/jsp/jstl/fmt" %>
+
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
+        <title>
+            Shopping Cart
+        </title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet"
               href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -19,19 +24,19 @@
         <link rel="stylesheet" href="./homeStyles.css">
         <link rel="stylesheet" href="viewShoppingCart.css">
         <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
-        
+
     <header class="shopping-cart-header">
 
         <div class="container">
             <div class="row">
 
-                
-                    <div class="col-1" >
+
+                <div class="col-1" >
                     <i class="icon-arrow-left" onclick="window.location = '../index.jsp'"> </i>
                 </div>
-               
 
-                
+
+
                 <div class="col-11">
                     Shopping Cart
                 </div>
@@ -41,7 +46,8 @@
 
 
 </head>
-<body style="text-align: center;font-size: 20px">
+<body style="text-align: center;font-size: 20px;overflow-x: hidden !important;
+      overflow-y: hidden !important;">
 
     <c:if test="${empty scItems}">
         <div class="empty-cart-text">
@@ -50,13 +56,16 @@
     </c:if>
     <c:if test="${fn:length(scItems) > 0}">
         <c:forEach var="s" items="${scItems}">
-            
-            
+
+
 
             <div class="row" style="height: 70px;
                  padding-top: 10px;">
-                <div class="col-2" 
-                     style="padding-top: 10px;">
+                <div class="col-1" 
+                     style="padding-top: 10px;text-align: right;
+                     padding-top: 10px;
+                     margin-right: 0;
+                     padding-right: 0;">
                     <form method="post" action="../ModifyCart">
                         <input type="hidden" name="foodItemID" id="foodItemID" value="${s.foodItemID}">
                         <button type="submit" style=" background: #2d6d2d; color: white;
@@ -65,7 +74,21 @@
                         </button>
                     </form>
 
+                </div>
+                <div class="col-1" 
+                     style="padding-top: 10px;padding-left: 0;">
+                    <form method="post" action="../DeleteFromCart">
+                        <input type="hidden" name="foodItemID" id="foodItemID" value="${s.foodItemID}">
+                        <button type="submit" style=" background: #2d6d2d; color: white;
+                                font-size: 20px;" class="btn modify-button">
+                            <i class="far fa-trash-alt"></i>
+                        </button>
+                    </form>
+
                 </div> 
+
+
+
                 <div class="col-5" 
                      style="padding-top: 10px;">
                     ${s.getFoodName()} 
@@ -76,7 +99,8 @@
                 </div> 
                 <div class="col-2" 
                      style="padding-top: 10px;">
-                    ${s.getFoodCarbon()}
+                    <fmt:formatNumber type = "number" 
+                                      maxIntegerDigits = "3" value = "${s.getFoodCarbon()}" />gm
                 </div> 
             </div>
 
@@ -92,14 +116,17 @@
                 </div> 
                 <div class="col-2 cart-text" 
                      style="padding-top: 10px;">
-                    ${totalScore}
+                    <fmt:formatNumber type = "number" 
+                                      maxIntegerDigits = "3" 
+                                      value = "${totalScore}" />gm
                 </div> 
                 <div class="col-2" 
                      style="padding-top: 10px;">
                     <input type="hidden" name="cScore" id="cScore" value="${totalScore}"/>
 
                     <button class="btn cart-button" type="submit">
-                        Add
+                        Checkout
+
                     </button>
 
 

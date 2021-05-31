@@ -67,13 +67,17 @@
                 
                 <div class="col-sm-4" style="margin-bottom: 10px" onclick="window.location = 'RetrieveFoodAndSuperMarket'">
                     <button type="button" class="btn btn-primary btn-lg btn-block adminButtons" onclick="window.location = 'getUsers'">
-                        Add SuperMarket Item
+                        Add Item To Supermarket
                     </button>
                 </div>
                 
                       
                
-               
+                 <div class="col-sm-4" style="margin-bottom: 10px" onclick="window.location = 'AddNewStoreLocationAdmin'">
+                    <button type="button" class="btn btn-primary btn-lg btn-block adminButtons">
+                        Add Store Location
+                    </button>
+                </div>
                 
             </div>
         </div>

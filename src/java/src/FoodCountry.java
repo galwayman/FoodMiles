@@ -10,21 +10,20 @@ package src;
  * @author coola
  */
 public class FoodCountry {
-    
+
     int journeyID;
     String foodCountryID;
     String foodCountryName;
     String foodCountryPhoto;
-    
-    
-    public FoodCountry(){
-             foodCountryID ="";
-     foodCountryName="";
-     foodCountryPhoto="";
-     journeyID =0;
+
+    public FoodCountry() {
+        foodCountryID = "";
+        foodCountryName = "";
+        foodCountryPhoto = "";
+        journeyID = 0;
     }
 
-    public FoodCountry(int journeyID,String foodCountryID, String foodCountryName, String footCountryPhoto) {
+    public FoodCountry(int journeyID, String foodCountryID, String foodCountryName, String footCountryPhoto) {
         this.foodCountryID = foodCountryID;
         this.foodCountryName = foodCountryName;
         this.foodCountryPhoto = footCountryPhoto;
@@ -54,6 +53,7 @@ public class FoodCountry {
     public void setFoodCountryPhoto(String foodCountryPhoto) {
         this.foodCountryPhoto = foodCountryPhoto;
     }
+
     public int getJourneyID() {
         return journeyID;
     }
@@ -61,7 +61,5 @@ public class FoodCountry {
     public void setjourneyID(int journeyID) {
         this.journeyID = journeyID;
     }
-    
-    
-    
+
 }

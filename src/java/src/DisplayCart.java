@@ -13,7 +13,7 @@ public class DisplayCart {
     
     String foodName;
     int foodQTY;
-    int foodCarbon;
+    double foodCarbon;
     int foodItemID;
     public DisplayCart(){
         foodName ="";
@@ -21,7 +21,7 @@ public class DisplayCart {
         foodCarbon =0;
         foodItemID=0;
     }
-    public DisplayCart(String foodName, int foodQTY,int foodCarbon,int foodItemID) {
+    public DisplayCart(String foodName, int foodQTY,double foodCarbon,int foodItemID) {
         this.foodName = foodName;
         this.foodQTY = foodQTY;
         this.foodCarbon=foodCarbon;
@@ -52,11 +52,11 @@ public class DisplayCart {
         this.foodQTY = foodQTY;
     }
 
-    public int getFoodCarbon() {
+    public double getFoodCarbon() {
         return foodCarbon;
     }
 
-    public void setFoodCarbon(int foodCarbon) {
+    public void setFoodCarbon(double foodCarbon) {
         this.foodCarbon = foodCarbon;
     }
     
