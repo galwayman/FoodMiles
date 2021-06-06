@@ -39,7 +39,7 @@
 </head>
 
 <body>
-    <form id="form" name="form" action="../UpdateUser" method="post">
+    <form class="border-user-edit" id="form" name="form" action="../UpdateUser" method="post">
         <label>
             <input type="hidden" name="userID" id="userID" value="${param.userID}"/>
         </label>   

@@ -32,7 +32,7 @@ public class UserDAO {
         PreparedStatement pstmt = null;
         try {
             con = DriverManager.getConnection(dbURL, username, password);
-            pstmt = con.prepareStatement("INSERT INTO user(userID,userName,userEmail,userPassword,premium,admin,profilePic) VALUES(?,?,?,?,?,?,?,?)");
+            pstmt = con.prepareStatement("INSERT INTO user(userID,userName,userEmail,userPassword,premium,admin,profilePic,passwordQuestion) VALUES(?,?,?,?,?,?,?,?)");
             pstmt.setInt(1, u.getUserID());
             pstmt.setString(2, u.getUserName());
             pstmt.setString(3, u.getUserEmail());

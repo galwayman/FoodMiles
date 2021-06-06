@@ -27,3 +27,10 @@ and open the template in the editor.
     background: #2d6d2d;
     color: white;
 }
+.border-user-edit{
+        border: solid 1px #2d6d2d;
+    width: 50%;
+    padding: 20px;
+    margin-top: 30px;
+    margin-left: 25%;
+}

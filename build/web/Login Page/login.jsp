@@ -89,7 +89,7 @@
         <div class="login-white-box">
 
             <h1 style="margin-bottom:40px;"class="title-login gradient-text">
-                <img style="width:65%;" src="images/logo.jpg" alt="logo">
+                <img style="width:60%;" src="images/1main logo.jpg" alt="logo">
 
                 <!--FOODMILES-->
             </h1>
@@ -109,7 +109,7 @@
                            class="form-control input-login" 
                            id="userEmailLogin" 
                            aria-describedby="emailHelp"
-                           value="lemon@lemon.com" 
+                           value="admin@admin.com" 
                            placeholder="Enter email">
                 </div>
                 <div class="form-group">

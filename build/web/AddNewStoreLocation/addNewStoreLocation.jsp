@@ -47,7 +47,7 @@
 
 </head>
 <body>
-    <form action="../AddStoreLocationInputs" method="post">
+    <form class="form-style-add-store-location" action="../AddStoreLocationInputs" method="post">
         <div class="form-group">
             <label class="food-item-add" for="sel1">Select Supermarket</label>
             <select class="form-control selFI"  name="superMarketLocationInput" id="superMarketLocationInput">

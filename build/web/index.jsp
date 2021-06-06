@@ -93,7 +93,7 @@
             <div class="row" style="text-align: center;
                  height: 100% !important;">
                 <div class="col-4" style="text-align: left">
-                    <img style="width:65%;" src="images/logo.jpg" alt="logo">
+                    <img style="width:55%;" src="images/1main logo.jpg" alt="logo">
                 </div>
                 <div class="col icon-button" 
                      style="cursor: pointer;font-size: 36px;

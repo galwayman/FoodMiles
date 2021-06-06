@@ -88,7 +88,7 @@ Author     : coola
                 </div>
                 <div class="food-item-add">
                     <label class="add-food-text" for="foodWeightAdmin">
-                        <span>Item Weight</span>
+                        <span>Item Weight (kg)</span>
                     </label>
                     <input type="text" class="food-item-add-input"  name="foodWeightAdmin" value="0.235"id="foodWeightAdmin" />
                 </div>

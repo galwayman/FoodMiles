@@ -36,9 +36,7 @@ public class SuperMarketDAO {
     
     public List<SuperMarket> getAllSuperMarkets() throws IOException {
         List<SuperMarket> supermarkets = new ArrayList<>();
-//        String dbURL = "jdbc:mysql://mysql1.it.nuigalway.ie:3306/mydb5473";
-//            String username = "mydb5473o";
-//            String password = "mydb5473o";
+
         
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -173,5 +171,253 @@ public class SuperMarketDAO {
                 
         return uniqueID;
     }
+    public List<FoodItem> getIrishFoodItemsFish(String sm) throws IOException {
+        List<FoodItem> irishFoods = new ArrayList<>();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(getSuperMarkets.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            
+
+            try (Connection connection = (Connection) DriverManager.getConnection(dbURL, username, password)) {
+                System.out.println("connection = " + connection.toString());
+                Statement statement = (Statement) connection.createStatement();
+                ResultSet rs = statement.executeQuery("select * from foodItem where irishSourced = 1 and foodClass = 'Fish' and foodItemID in (select fID from superMarketItems where smID = "+sm+");");
+            System.out.println("rs = " + rs.toString());
+            while (rs.next()) {
+
+                int foodItemID = rs.getInt("foodItemID");
+                String foodName = rs.getString("foodName");
+                int organic = rs.getInt("organic");
+                int irishSourced = rs.getInt("irishSourced");
+                Blob blob = rs.getBlob("foodItemPic");
+                String foodClass = rs.getString("foodClass");
+                String foodType = rs.getString("foodType");
+                InputStream inputStream = blob.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+                byte[] imageBytes = outputStream.toByteArray();
+
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+
+                inputStream.close();
+                outputStream.close();
+                FoodItem f = new FoodItem(foodItemID, foodName, organic,irishSourced,base64Image, foodClass, foodType);
+
+                irishFoods.add(f);
+            }
+            }
+            } catch (SQLException e) {
+            System.out.println("SQLException: " + e.toString());
+        }
+        
+        return irishFoods;
+    }
+      public List<FoodItem> getIrishFoodItemsDairy(String sm) throws IOException {
+        List<FoodItem> irishFoods = new ArrayList<>();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(getSuperMarkets.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            
+
+            try (Connection connection = (Connection) DriverManager.getConnection(dbURL, username, password)) {
+                System.out.println("connection = " + connection.toString());
+                Statement statement = (Statement) connection.createStatement();
+                ResultSet rs = statement.executeQuery("select * from foodItem where irishSourced = 1 and foodClass = 'Dairy' and foodItemID in (select fID from superMarketItems where smID = "+sm+");");
+            System.out.println("rs = " + rs.toString());
+            while (rs.next()) {
+
+                int foodItemID = rs.getInt("foodItemID");
+                String foodName = rs.getString("foodName");
+                int organic = rs.getInt("organic");
+                int irishSourced = rs.getInt("irishSourced");
+                Blob blob = rs.getBlob("foodItemPic");
+                String foodClass = rs.getString("foodClass");
+                String foodType = rs.getString("foodType");
+                InputStream inputStream = blob.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+                byte[] imageBytes = outputStream.toByteArray();
+
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+
+                inputStream.close();
+                outputStream.close();
+                FoodItem f = new FoodItem(foodItemID, foodName, organic,irishSourced,base64Image, foodClass, foodType);
+
+                irishFoods.add(f);
+            }
+            }
+            } catch (SQLException e) {
+            System.out.println("SQLException: " + e.toString());
+        }
+        
+        return irishFoods;
+    }
+       public List<FoodItem> getIrishFoodItemsFruit(String sm) throws IOException {
+        List<FoodItem> irishFoods = new ArrayList<>();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(getSuperMarkets.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            
+
+            try (Connection connection = (Connection) DriverManager.getConnection(dbURL, username, password)) {
+                System.out.println("connection = " + connection.toString());
+                Statement statement = (Statement) connection.createStatement();
+                ResultSet rs = statement.executeQuery("select * from foodItem where irishSourced = 1 and foodClass = 'Fruit' and foodItemID in (select fID from superMarketItems where smID = "+sm+");");
+            System.out.println("rs = " + rs.toString());
+            while (rs.next()) {
+
+                int foodItemID = rs.getInt("foodItemID");
+                String foodName = rs.getString("foodName");
+                int organic = rs.getInt("organic");
+                int irishSourced = rs.getInt("irishSourced");
+                Blob blob = rs.getBlob("foodItemPic");
+                String foodClass = rs.getString("foodClass");
+                String foodType = rs.getString("foodType");
+                InputStream inputStream = blob.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+                byte[] imageBytes = outputStream.toByteArray();
+
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+
+                inputStream.close();
+                outputStream.close();
+                FoodItem f = new FoodItem(foodItemID, foodName, organic,irishSourced,base64Image, foodClass, foodType);
+
+                irishFoods.add(f);
+            }
+            }
+            } catch (SQLException e) {
+            System.out.println("SQLException: " + e.toString());
+        }
+        
+        return irishFoods;
+    }
+            
+ public List<FoodItem> getIrishFoodItemsVegetables(String sm) throws IOException {
+        List<FoodItem> irishFoods = new ArrayList<>();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(getSuperMarkets.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            
+
+            try (Connection connection = (Connection) DriverManager.getConnection(dbURL, username, password)) {
+                System.out.println("connection = " + connection.toString());
+                Statement statement = (Statement) connection.createStatement();
+                ResultSet rs = statement.executeQuery("select * from foodItem where irishSourced = 1 and foodClass = 'Vegetables' and foodItemID in (select fID from superMarketItems where smID = "+sm+");");
+            System.out.println("rs = " + rs.toString());
+            while (rs.next()) {
+
+                int foodItemID = rs.getInt("foodItemID");
+                String foodName = rs.getString("foodName");
+                int organic = rs.getInt("organic");
+                int irishSourced = rs.getInt("irishSourced");
+                Blob blob = rs.getBlob("foodItemPic");
+                String foodClass = rs.getString("foodClass");
+                String foodType = rs.getString("foodType");
+                InputStream inputStream = blob.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+                byte[] imageBytes = outputStream.toByteArray();
+
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+
+                inputStream.close();
+                outputStream.close();
+                FoodItem f = new FoodItem(foodItemID, foodName, organic,irishSourced,base64Image, foodClass, foodType);
+
+                irishFoods.add(f);
+            }
+            }
+            } catch (SQLException e) {
+            System.out.println("SQLException: " + e.toString());
+        }
+        
+        return irishFoods;
+    }
+ public List<FoodItem> getIrishFoodItemsMeat(String sm) throws IOException {
+        List<FoodItem> irishFoods = new ArrayList<>();
+
+        try {
+            Class.forName("com.mysql.jdbc.Driver");
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(getSuperMarkets.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        try {
+            
+
+            try (Connection connection = (Connection) DriverManager.getConnection(dbURL, username, password)) {
+                System.out.println("connection = " + connection.toString());
+                Statement statement = (Statement) connection.createStatement();
+                ResultSet rs = statement.executeQuery("select * from foodItem where irishSourced = 1 and foodClass = 'Meat' and foodItemID in (select fID from superMarketItems where smID = "+sm+");");
+            System.out.println("rs = " + rs.toString());
+            while (rs.next()) {
+
+                int foodItemID = rs.getInt("foodItemID");
+                String foodName = rs.getString("foodName");
+                int organic = rs.getInt("organic");
+                int irishSourced = rs.getInt("irishSourced");
+                Blob blob = rs.getBlob("foodItemPic");
+                String foodClass = rs.getString("foodClass");
+                String foodType = rs.getString("foodType");
+                InputStream inputStream = blob.getBinaryStream();
+                ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+                byte[] buffer = new byte[4096];
+                int bytesRead = -1;
+                while ((bytesRead = inputStream.read(buffer)) != -1) {
+                    outputStream.write(buffer, 0, bytesRead);
+                }
+                byte[] imageBytes = outputStream.toByteArray();
+
+                String base64Image = Base64.getEncoder().encodeToString(imageBytes);
+
+                inputStream.close();
+                outputStream.close();
+                FoodItem f = new FoodItem(foodItemID, foodName, organic,irishSourced,base64Image, foodClass, foodType);
+
+                irishFoods.add(f);
+            }
+            }
+            } catch (SQLException e) {
+            System.out.println("SQLException: " + e.toString());
+        }
+        
+        return irishFoods;
+    }
     
 }
+
+

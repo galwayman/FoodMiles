@@ -49,8 +49,8 @@ public class UserRegistration extends HttpServlet {
 
         testUserName = newUser.checkForUserName(userNameReg);
         testUserEmail = newUser.checkForUserEmail(userEmailReg);
-        String uReg = "Fail";
 
+        
         User n = new User(userID, userNameReg, userEmailReg, userPasswordReg, premium, admin, profilePic,passwordQuestion);
         HttpSession session = request.getSession();
         if (testUserName == 1) {
@@ -62,17 +62,11 @@ public class UserRegistration extends HttpServlet {
                 response.sendRedirect("index.jsp");
             } else {
 
-//                request.setAttribute("userRegMessageFailed", uReg);
-//
-//                request.getRequestDispatcher("UserReg/userReg.jsp").forward(request, response);
                 
             response.sendRedirect("UserReg/userReg.jsp?message=hello");
 
             }
         } else {
-//            request.setAttribute("userRegMessageFailed", uReg);
-//            request.getRequestDispatcher("UserReg/userReg.jsp").forward(request, response);
-            
             response.sendRedirect("UserReg/userReg.jsp?message=hello");
         }
 

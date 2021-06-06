@@ -102,20 +102,7 @@ public class getUserScores extends HttpServlet {
                 }
 
                
-                ResultSet rs1 = statement.executeQuery("select * from userScores");
-                System.out.println("rs1 = " + rs.toString());
-
-                while (rs1.next()) {
-
-                    int userIDScore = rs1.getInt("userIDScore");
-
-                    int cartNumber = rs1.getInt("cartNumber");
-                    int carbonScore = rs1.getInt("carbonScore");
-
-                    UserScores avg = new UserScores(userIDScore, cartNumber, carbonScore);
-
-                    averageUserScore.add(avg);
-                }
+                
             }
         } catch (SQLException e) {
             System.out.println("SQLException: " + e.toString());
@@ -126,7 +113,8 @@ public class getUserScores extends HttpServlet {
             sum += averageUserScore.get(i).getCarbonScore();
         }
 
-        double avg = sum / averageUserScore.size();
+        UserScoresDAO uDA = new UserScoresDAO();
+        double avg = uDA.getAverageCarbonScore();
 
         UserScoresDAO uDAO = new UserScoresDAO();
         List<UserScoreTop> scores = uDAO.getBestScores();

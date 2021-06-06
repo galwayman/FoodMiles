@@ -64,5 +64,36 @@ public class UserScoresDAO {
         }
         return scores;
     }
+    
+    public double getAverageCarbonScore(){
+        double average = 0;
+        
+        Connection con = null;
+        Statement stmt = null;
+        try {
+            con = DriverManager.getConnection(dbURL, username, password);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select avg(carbonScore) as Average from userScores;");
+
+            while (rs.next()) {
+
+                 average = rs.getInt("Average");
+    
+            }
+        } catch (SQLException ex) {
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+
+            }
+        }
+        return average;
+    }
 
 }

@@ -37,7 +37,7 @@ public class FoodDAO {
     String username = "mydb5473o";
     String password = "mydb5473o";
 
-    public List<FoodItem> getFaveItems() {
+    public List<FoodItem> getFaveItems(int uID) {
 
         List<FoodItem> faveItems = new ArrayList<>();
         Connection con = null;
@@ -53,7 +53,7 @@ public class FoodDAO {
             con = DriverManager.getConnection(dbURL, username, password);
             stmt = con.createStatement();
             ResultSet rs;
-            rs = stmt.executeQuery("select * from foodItem where foodItemID in (select foodItemIDFaveItems from faveItems)");
+            rs = stmt.executeQuery("select * from foodItem where foodItemID in (select foodItemIDFaveItems from faveItems where userIDFaveItems ="+uID+")");
 
             while (rs.next()) {
 

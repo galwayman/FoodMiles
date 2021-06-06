@@ -19,6 +19,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import src.FoodDAO;
 import src.FoodItem;
+import src.User;
 
 /**
  *
@@ -39,9 +40,10 @@ public class getFaveItems extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
 
-        
+        User u = (User) request.getSession().getAttribute("uLog");
+        int uID = u.getUserID();
         FoodDAO fA = new FoodDAO();
-        List<FoodItem> faveItems = fA.getFaveItems();
+        List<FoodItem> faveItems = fA.getFaveItems(uID);
         
         
         HttpSession session = request.getSession();

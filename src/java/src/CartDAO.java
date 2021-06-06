@@ -162,5 +162,35 @@ public class CartDAO {
             }
         }
     }
+        
+    public int countCarts() {
+        int count =0;
+        Connection con = null;
+        Statement stmt = null;
+        try {
+            con = DriverManager.getConnection(dbURL, username, password);
+            stmt = con.createStatement();
+            ResultSet rs = stmt.executeQuery("select count(cartNumber) as Count from userScores;");
+
+            while (rs.next()) {
+
+                count = rs.getInt("Count");
+               
+            }
+        } catch (SQLException ex) {
+        } finally {
+            try {
+                if (stmt != null) {
+                    stmt.close();
+                }
+                if (con != null) {
+                    con.close();
+                }
+            } catch (SQLException ex) {
+
+            }
+        }
+        return count;
+    } 
 
 }

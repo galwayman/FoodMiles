@@ -55,7 +55,7 @@
                     vAxis: {
                         viewWindow: {
                             min: 0,
-                            max: ${highScore} + 100
+                            max: ${highScore} + ${avg}
                         }
                     },
                     legend: {textStyle: {fontName: 'TimesNewRoman', fontSize: 30, bold: false}},
@@ -104,7 +104,8 @@
                 </div>
         </header>
     </head>
-    <body  class="default-background">
+    <body  class="default-background" style="overflow-x: hidden !important;
+    overflow-y: hidden !important;">
     <c:if test="${empty uScores}">
         <div class="empty-cart-text">
             Sorry you need to add items to the cart first
@@ -112,7 +113,7 @@
     </c:if>
     <c:if test="${fn:length(uScores) > 0}">
 
-        <div style="margin-top: 1%;" id="line_top_x"></div>
+        <div style="margin-top: 10%;" id="line_top_x"></div>
 
 
         <div class="scoreboard">
@@ -128,7 +129,7 @@
                             ${s.userName} 
                         </div>
                         <div class="col-6">
-                            ${s.average}
+                            ${s.average} g
                         </div>
                         <div class="col-3">
                             <c:if test="${s.position == '1'}">

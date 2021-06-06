@@ -61,10 +61,9 @@ public class loginDirect extends HttpServlet {
         User uLog = us.getUser(uE, uP);
         int admin1 = uLog.getAdmin();
         int testEmail = us.checkForUserEmail(uE);
-        
 
         if (testEmail == 0) {
-int testPass = us.checkPassword(uP,uE);
+            int testPass = us.checkPassword(uP, uE);
             if (testPass == 0) {
                 HttpSession session = request.getSession();
                 session.setAttribute("uLog", uLog);
@@ -72,7 +71,7 @@ int testPass = us.checkPassword(uP,uE);
                 if (admin1 == 0) {
                     response.sendRedirect("index.jsp");
                 } else if (admin1 == 1) {
-                    response.sendRedirect("adminHomePage.jsp");
+                    response.sendRedirect("getAdminHomePageInfo");
                 }
             } else if (testPass == 1) {
                 response.sendRedirect("Login Page/login.jsp");
@@ -90,7 +89,6 @@ int testPass = us.checkPassword(uP,uE);
 //        } else if (admin1 == 1) {
 //            response.sendRedirect("adminHomePage.jsp");
 //        }
-
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

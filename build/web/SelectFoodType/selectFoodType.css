@@ -34,3 +34,13 @@ row{
     padding-bottom: 10px;
     
 }
+.info-div{
+        background: white;
+    width: 60%;
+    margin-left: 20%;
+    text-align: center;
+    height: 4rem;
+    padding-top: 11px;
+    font-size: 22px;
+    color: #2d6d2d;
+}

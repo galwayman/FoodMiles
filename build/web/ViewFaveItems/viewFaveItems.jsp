@@ -11,6 +11,66 @@
 <html>
     <head>
 
+        <style>
+            #snackbar {
+                visibility: hidden;
+                min-width: 250px;
+                margin-left: -125px;
+                background-color:  #00ccff;
+                color: white;
+                text-align: center;
+                border-radius: 2px;
+                padding: 16px;
+                position: fixed;
+                z-index: 1;
+                left: 50%;
+                bottom: 30px;
+                font-size: 17px;
+            }
+
+            #snackbar.show {
+                visibility: visible;
+                -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+                animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            }
+
+            @-webkit-keyframes fadein {
+                from {bottom: 0; opacity: 0;} 
+                to {bottom: 30px; opacity: 1;}
+            }
+
+            @keyframes fadein {
+                from {bottom: 0; opacity: 0;}
+                to {bottom: 30px; opacity: 1;}
+            }
+
+            @-webkit-keyframes fadeout {
+                from {bottom: 30px; opacity: 1;} 
+                to {bottom: 0; opacity: 0;}
+            }
+
+            @keyframes fadeout {
+                from {bottom: 30px; opacity: 1;}
+                to {bottom: 0; opacity: 0;}
+            }
+        </style>
+        <script>
+
+
+            function myFunction() {
+
+                var x = document.getElementById("snackbar");
+                x.className = "show";
+                setTimeout(function () {
+                    x.className = x.className.replace("show", "");
+                }, 3000);
+
+
+            }
+
+
+        </script>
+
         <title>View Fave Items</title>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="http://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
@@ -24,7 +84,7 @@
         <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
         <script src="./libs/jquery/1.10.1/jquery.min.js"></script>
         <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
-        
+
 
     <header class="food-miles-header">
         <div class="container">
@@ -121,5 +181,12 @@
 
 
 </body>
+<div id="snackbar">Successfully Removed</div>
+<c:if test="${param.message == 'Success'}">
+    <script>
+        myFunction();
+    </script>
+    <c:remove var="message" scope="session" />
+</c:if>  
 </html>
 

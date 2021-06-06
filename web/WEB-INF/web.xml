@@ -148,6 +148,10 @@
         <servlet-name>DeleteFromCart</servlet-name>
         <servlet-class>servlets.DeleteFromCart</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>getAdminHomePageInfo</servlet-name>
+        <servlet-class>servlets.getAdminHomePageInfo</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>getSuperMarkets</servlet-name>
         <url-pattern>/getSuperMarkets</url-pattern>
@@ -290,6 +294,10 @@
     <servlet-mapping>
         <servlet-name>DeleteFromCart</servlet-name>
         <url-pattern>/DeleteFromCart</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>getAdminHomePageInfo</servlet-name>
+        <url-pattern>/getAdminHomePageInfo</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

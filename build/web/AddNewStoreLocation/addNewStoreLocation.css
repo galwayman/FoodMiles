@@ -8,6 +8,14 @@ and open the template in the editor.
     Author     : aisli
 */
 
+.form-style-add-store-location{
+    border: solid #2d6d2d 1px;
+    margin-top: 10%;
+    width: 50%;
+    margin-left: 25%;
+     box-shadow: 5px 3px 13px 6px #888888a8;
+    padding: 20px;
+}
 .default-header-foodmiles {
     background: #2d6d2d;
     color: white;

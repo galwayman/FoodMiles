@@ -65,7 +65,8 @@ public class AddNewLeg extends HttpServlet {
         session.setAttribute("endCountriesJourney", endCountriesJourney);
         session.setAttribute("deliveryTypeJourney", deliveryTypeJourney);
 
-        response.sendRedirect("getTravelLegDetails");
+//        response.sendRedirect("getTravelLegDetails");
+        response.sendRedirect("adminHomePage.jsp");
 
     }
 

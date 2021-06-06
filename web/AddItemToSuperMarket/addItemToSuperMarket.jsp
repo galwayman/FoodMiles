@@ -20,17 +20,13 @@
         <link rel="stylesheet" href="./AddItemToSuperMarket/addItemToSuperMarket.css">
         <link rel="stylesheet" href="addItemToSuperMarket.css">
         <script src="https://kit.fontawesome.com/59e2d07626.js" crossorigin="anonymous"></script>
-        <script>
-            function goBack() {
-                window.history.back();
-            }
-        </script>
+       
     <header class="edit-country-header">
 
         <div class="container">
             <div class="row">
 
-                <div class="col-1" onclick="goBack()">
+                <div class="col-1" onclick="window.location = '../index.jsp'">
                     <i class="icon-arrow-left"></i>
                 </div>
                 <div class="col-11">

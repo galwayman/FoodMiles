@@ -21,13 +21,14 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import src.SuperMarketStoreLocations;
 import src.AddStoreLocationDAO;
-import src.FoodItem;
+import src.SuperMarketStoreLocationsDAO;
 
 /**
  *
@@ -47,17 +48,24 @@ public class GetStoreLocations extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
-        AddStoreLocationDAO locations= new AddStoreLocationDAO();
+      
         
-        List<SuperMarketStoreLocations> sl = locations.getStoreLocations();
-                
-                        
-       
-        HttpSession session = request.getSession();
-        session.setAttribute("sl", sl);
+       // List<SuperMarketStoreLocations> sl = locations.getStoreLocations();
+        List<SuperMarketStoreLocations> locations;
+        SuperMarketStoreLocationsDAO s = new SuperMarketStoreLocationsDAO();
+        locations = s.getStoreLocations(); 
 
+                
+        // this needs to be assigned  to a list of type storeLocations. I made one that is currently assigned to null above
+      
+        
+        
+        HttpSession session = request.getSession();
+        session.setAttribute("locations", locations);
+        
         RequestDispatcher dispatcher = request.getRequestDispatcher("StoreLocations/storeLocations.jsp");
         dispatcher.forward(request, response);
+
     }
     
  // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
@@ -100,3 +108,4 @@ public class GetStoreLocations extends HttpServlet {
     }// </editor-fold>
 
 }
+

@@ -50,7 +50,7 @@ public class DeleteFave extends HttpServlet {
         
         del.deleteItemFromFavourites(uID,fID);
          
-        response.sendRedirect("getFaveItems");
+        response.sendRedirect("getFaveItems?message=Success");
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
